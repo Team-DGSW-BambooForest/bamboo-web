@@ -1,14 +1,45 @@
+import React from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { NextComponentType } from "next";
+import { AppContext, AppInitialProps, AppProps } from "next/app";
+import { Hydrate } from "react-query/hydration";
+import { ReactQueryDevtools } from "react-query/devtools";
 import { RecoilRoot } from "recoil";
-import AuthCheck from "../components/common/Auth/AuthCheck";
 
-function MyApp({ Component, pageProps }: any) {
+const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
+  Component,
+  pageProps,
+}) => {
+  const queryClientRef = React.useRef<QueryClient>();
+  if (!queryClientRef.current) {
+    queryClientRef.current = new QueryClient();
+  }
+
   return (
-    <RecoilRoot>
-      <AuthCheck>
-        <Component ponent {...pageProps} />
-      </AuthCheck>
-    </RecoilRoot>
+    <>
+      <RecoilRoot>
+        <QueryClientProvider client={queryClientRef.current}>
+          <Hydrate state={pageProps.dehydratedState}>
+            <Component {...pageProps} />
+          </Hydrate>
+          <ReactQueryDevtools />
+        </QueryClientProvider>
+      </RecoilRoot>
+    </>
   );
-}
+};
+
+MyApp.getInitialProps = async ({
+  Component,
+  ctx,
+}: AppContext): Promise<AppInitialProps> => {
+  let pageProps = {};
+
+  if (Component.getInitialProps) {
+    pageProps = await Component.getInitialProps(ctx);
+  }
+
+  return { pageProps };
+};
 
 export default MyApp;
