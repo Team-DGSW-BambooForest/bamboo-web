@@ -20,7 +20,7 @@ const Login = () => {
   const loginRequest = (event: ChangeEvent<HTMLFormElement>) => {
     stopReload(event);
     setAuthState({ isLogined: true, userName: "강성훈" });
-    router.push("/");
+    router.prefetch("/");
   };
 
   return (
