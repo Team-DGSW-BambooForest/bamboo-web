@@ -1,7 +1,7 @@
+import { useRouter } from "next/router";
 import React, { FormEvent } from "react";
 import { useRecoilState } from "recoil";
-import { AuthState } from "../atom/Auth/AuthState";
-import { useRouter } from "next/router";
+import { AuthState } from "../atom/AuthState";
 import { useLogin, AuthAtomType } from "custom-hooks";
 
 const Login = () => {
@@ -13,18 +13,18 @@ const Login = () => {
   /**
    * 로그인 관련 로직
    */
-  const { loginRequest } = useLogin(false, setAuthState);
+  const { loginRequest } = useLogin(true, setAuthState);
 
   return (
     <form
-      onSubmit={(e: FormEvent<HTMLFormElement>) => {
+      onSubmit={(e: FormEvent) => {
         loginRequest(e);
         router.push("/");
       }}
     >
-      <input type="text" required name="id" id="id" />
-      <input type="password" required name="pw" id="pw" />
-      <button>로그인</button>
+      <input type="text" name="" id="" />
+      <input type="password" name="" id="" />
+      <button>login</button>
     </form>
   );
 };
