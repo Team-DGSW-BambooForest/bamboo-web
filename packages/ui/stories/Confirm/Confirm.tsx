@@ -1,18 +1,29 @@
 import React from "react";
 import { ConfirmProps } from "./confirm.interface";
-import { CofirmContainer } from "./confirm.style";
+import {
+  CofirmContainer,
+  ConfirmBottom,
+  ConfirmContent,
+} from "./confirm.style";
 import { stopBubbling } from "custom-util";
+import { Button } from "../Button/Button";
 
-const Confirm = ({ close, text, finaly }: ConfirmProps) => {
+export const Confirm = ({ close, text, finaly }: ConfirmProps) => {
   return (
     <CofirmContainer
       onClick={(event: React.ChangeEvent<HTMLDivElement>) => {
         stopBubbling(event);
       }}
     >
-      confirm
+      <ConfirmContent>{text.title}</ConfirmContent>
+      <ConfirmBottom>
+        <Button color="black" size="md" onClick={finaly}>
+          {text.accept}
+        </Button>
+        <Button color="black" size="md" onClick={() => close(true)}>
+          {text.refuse}
+        </Button>
+      </ConfirmBottom>
     </CofirmContainer>
   );
 };
-
-export default Confirm;

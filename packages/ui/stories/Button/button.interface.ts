@@ -1,3 +1,5 @@
+import { MouseEventHandler } from "react";
+
 export type ColorType = "black" | "white";
 
 export type SizeType = "lg" | "md" | "sm";

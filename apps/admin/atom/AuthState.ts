@@ -5,7 +5,6 @@ export const AuthState = atom<AuthAtomType>({
   key: "authState",
   default: {
     isLogined: true,
-    userName: null,
   },
 });
 
@@ -18,17 +17,5 @@ export const getLoginCheck = selector({
   get: ({ get }) => {
     const auth = get(AuthState);
     return auth.isLogined;
-  },
-});
-
-/**
- * 로그인된 유저의 이름
- * @returns string
- */
-export const getUserName = selector({
-  key: "getUserName",
-  get: ({ get }) => {
-    const auth = get(AuthState);
-    return auth.userName;
   },
 });
