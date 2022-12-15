@@ -1,27 +1,15 @@
+import { Search } from "ui";
+import useSearch from "ui/stories/search/hooks/useSearch";
+
 export default function Web() {
+  const { changeSearchWord, suggestList, detectESC } = useSearch();
   return (
     <div>
-      <ul>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-        <li>test</li>
-      </ul>
+      <Search
+        changeSearchWord={changeSearchWord}
+        suggestList={suggestList}
+        detectESC={detectESC}
+      />
     </div>
   );
 }
