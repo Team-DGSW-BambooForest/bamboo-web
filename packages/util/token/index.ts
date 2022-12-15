@@ -1,10 +1,15 @@
 import { Cookies } from "react-cookie";
 import axios from "axios";
 
+type CookieType = {
+  accessToken: string;
+  refreshToken: string;
+};
+
 const cookies = new Cookies();
 
-export const getToken = () => {
-  const { accessToken, refreshToken } = cookies.getAll();
+export const getToken = (): CookieType => {
+  const { accessToken, refreshToken }: CookieType = cookies.getAll();
   return { accessToken, refreshToken };
 };
 
