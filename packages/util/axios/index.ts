@@ -3,24 +3,21 @@ import { conf } from "../config";
 import { clearToken, getToken, setToken } from "../token";
 import router from "next/router";
 
-const customAxios = axios.create({
+export const customAxios = axios.create({
   baseURL: conf.baseUrl,
   timeout: 10000,
 });
 
 customAxios.interceptors.request.use(
   async function (config: AxiosRequestConfig<any>) {
-    const accessToken = await getToken().accessToken;
-    accessToken
-      ? (config.headers = {
-          Authorization: `Bearer ${accessToken}`,
-        })
-      : null;
+    const accessToken = getToken().accessToken;
+    accessToken &&
+      (config.headers = {
+        Authorization: `Bearer ${accessToken}`,
+      });
     return config;
   },
-  function (error: AxiosError) {
-    return Promise.reject(error);
-  }
+  (error: AxiosError) => Promise.reject(error)
 );
 
 customAxios.interceptors.response.use(
@@ -35,17 +32,17 @@ customAxios.interceptors.response.use(
           const {
             data: { accessToken, refreshToken },
           } = await axios({
-            method: "",
-            url: `${conf.baseUrl}/`,
+            method: "POST",
+            url: `${conf.baseUrl}/user/token-reniew`,
             headers: {
-              "Refresh-Token": `Bearer ${getToken().refreshToken}`,
+              "refresh-token": `Bearer ${getToken().refreshToken}`,
             },
           });
 
           setToken(accessToken, refreshToken);
-          if (config?.headers) {
+          if (config?.headers)
             config.headers.Authorization = `Bearer ${accessToken}`;
-          }
+
           return axios(config!!);
         } catch (e) {
           if (
@@ -61,5 +58,3 @@ customAxios.interceptors.response.use(
     }
   }
 );
-
-export default customAxios;
