@@ -15,6 +15,9 @@ const useSearch = () => {
   }, []);
 
   const updateData = useCallback(() => {
+    /**
+     * @todo 단어 변경 시 데이터 변경 로직 작성
+     */
     setSuggestList(
       new Array(10)
         .fill(0)
