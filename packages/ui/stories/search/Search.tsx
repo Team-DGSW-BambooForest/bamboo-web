@@ -1,22 +1,40 @@
-import { KeyboardEventHandler } from "react";
+import { memo } from "react";
+import { useSearch } from "./hooks/useSearch";
 
 type SearchType = {
-  changeSearchWord: (e: any) => void;
-  suggestList: string[];
-  detectESC: KeyboardEventHandler<HTMLInputElement>;
+  suggest: (str: string) => void;
+  request: (str: string) => void;
 };
 
-export const Search = ({
-  changeSearchWord,
-  suggestList,
-  detectESC,
-}: SearchType) => {
+// eslint-disable-next-line react/display-name
+export const Search = memo(({ request, suggest }: SearchType) => {
+  const {
+    changeSearchWord,
+    suggestList,
+    detectKey,
+    inputBlurRef,
+    chooseSuggest,
+    searchWord,
+    click,
+    clickRequest,
+  } = useSearch(suggest, request);
+
   return (
     <div>
-      <input type="text" onChange={changeSearchWord} onKeyDown={detectESC} />
+      <input
+        type="text"
+        onChange={changeSearchWord}
+        onKeyDown={detectKey}
+        ref={inputBlurRef}
+        value={searchWord}
+        onClick={click}
+      />
+      <p onClick={clickRequest}>검색</p>
       {suggestList.map((v: string, idx: number) => (
-        <div key={idx}>{v}</div>
+        <div key={idx} onClick={() => chooseSuggest(v)}>
+          {v}
+        </div>
       ))}
     </div>
   );
-};
+});
