@@ -16,7 +16,6 @@ const Template: ComponentStory<typeof Search> = (args) => <Search {...args} />;
 export const Common = Template.bind({});
 
 Common.args = {
-  detectESC: () => {},
-  changeSearchWord: () => {},
-  suggestList: [],
+  request: () => {},
+  suggest: () => {},
 };
