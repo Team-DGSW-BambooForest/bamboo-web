@@ -11,8 +11,8 @@ export const BambooThemeProvider = ({
   children,
   mode = "light",
 }: BambooThemeProviderType) => {
-  const theme = useMemo(() => {
-    const usingColor: ColorThemeType = colors[mode];
+  const theme: ColorThemeType = useMemo(() => {
+    const usingColor = colors[mode];
     return {
       colors: {
         ...usingColor,
