@@ -1,5 +1,11 @@
-import styled, { css, FlattenSimpleInterpolation } from "styled-components";
+import styled, {
+  css,
+  FlattenInterpolation,
+  FlattenSimpleInterpolation,
+  ThemeProps,
+} from "styled-components";
 import { ColorType, SizeType } from "./button.interface";
+import { ColorThemeType } from "@bamboo/ui-mode";
 
 export const ButtonBox = styled.div<{
   color: ColorType;
@@ -34,14 +40,20 @@ const sizeStyle: Record<SizeType, FlattenSimpleInterpolation> = {
   `,
 };
 
-const colorStyle: Record<ColorType, FlattenSimpleInterpolation> = {
+const colorStyle: Record<
+  ColorType,
+  FlattenInterpolation<ThemeProps<ColorThemeType>>
+> = {
   black: css`
-    background-color: black;
-    color: white;
+    background-color: ${(props: ThemeProps<ColorThemeType>) =>
+      props.theme.colors.black};
+    color: ${(props: ThemeProps<ColorThemeType>) =>
+      props.theme.colors.whiteInText};
   `,
   white: css`
-    background-color: white;
-    border: 1px solid black;
-    color: black;
+    background-color: ${(props: ThemeProps<ColorThemeType>) =>
+      props.theme.colors.white};
+    color: ${(props: ThemeProps<ColorThemeType>) =>
+      props.theme.colors.blackInText};
   `,
 };
