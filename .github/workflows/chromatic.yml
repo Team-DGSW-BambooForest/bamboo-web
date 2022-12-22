@@ -13,8 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: yarn
-      - run: cd ./packages/
-      - run: cd ./ui
+      - run: cd ./packages/ui/
         #👇 Adds Chromatic as a step in the workflow
 
       - uses: chromaui/action@v1
