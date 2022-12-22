@@ -1,23 +1,25 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-
+import { BambooThemeProvider } from "@bamboo/styled-theme";
 import { Button } from "./Button";
 
 export default {
   title: "ui/Button",
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
+  argTypes: {},
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = (args) => (
+  <BambooThemeProvider mode="light">
+    <Button {...args} />
+  </BambooThemeProvider>
+);
 
 export const Common = Template.bind({});
 Common.args = {
-  children: "test",
-  color: "white",
+  children: "abc",
   size: "md",
+  color: "black",
 };
 
 // import React from "react";

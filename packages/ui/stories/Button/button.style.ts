@@ -46,14 +46,14 @@ const colorStyle: Record<
 > = {
   black: css`
     background-color: ${(props: ThemeProps<ColorThemeType>) =>
-      props.theme.colors.black};
+      props.theme.colors?.black};
     color: ${(props: ThemeProps<ColorThemeType>) =>
-      props.theme.colors.whiteInText};
+      props.theme.colors?.whiteInText};
   `,
   white: css`
     background-color: ${(props: ThemeProps<ColorThemeType>) =>
-      props.theme.colors.white};
+      props.theme.colors?.white};
     color: ${(props: ThemeProps<ColorThemeType>) =>
-      props.theme.colors.blackInText};
+      props.theme.colors?.blackInText};
   `,
 };

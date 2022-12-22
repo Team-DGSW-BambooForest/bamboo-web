@@ -4,7 +4,7 @@ import {
   InferGetServerSidePropsType,
 } from "next";
 
-import { Button } from "ui";
+import { Button } from "@bamboo/ui";
 
 export default function Docs({
   post,

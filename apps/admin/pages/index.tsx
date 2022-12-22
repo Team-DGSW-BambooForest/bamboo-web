@@ -1,4 +1,4 @@
-import { Search } from "ui";
+import { Search } from "@bamboo/ui";
 
 export default function Web() {
   return (

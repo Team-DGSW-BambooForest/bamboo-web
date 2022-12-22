@@ -1,5 +1,5 @@
 {
-  "name": "ui",
+  "name": "@bamboo/ui",
   "version": "0.0.0",
   "main": "./index.tsx",
   "types": "./index.tsx",
@@ -28,7 +28,8 @@
     "tsconfig": "*",
     "typescript": "^4.5.2",
     "custom-util": "*",
-    "@bamboo/ui-mode": "*"
+    "@bamboo/ui-mode": "*",
+    "@bamboo/styled-theme": "*"
   },
   "dependencies": {}
 }
