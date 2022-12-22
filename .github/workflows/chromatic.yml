@@ -5,7 +5,7 @@ name: "Chromatic Deployment"
 on:
   push:
     branches:
-      - develop
+      - deploy/storybook
       - main
 
 # List of jobs
