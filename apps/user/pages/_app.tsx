@@ -5,6 +5,7 @@ import { AppContext, AppInitialProps, AppProps } from "next/app";
 import { Hydrate } from "react-query/hydration";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { RecoilRoot } from "recoil";
+import { BambooThemeProvider } from "@bamboo/styled-theme";
 
 const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
   Component,
@@ -17,14 +18,16 @@ const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
 
   return (
     <>
-      <RecoilRoot>
-        <QueryClientProvider client={queryClientRef.current}>
-          <Hydrate state={pageProps.dehydratedState}>
-            <Component {...pageProps} />
-          </Hydrate>
-          <ReactQueryDevtools />
-        </QueryClientProvider>
-      </RecoilRoot>
+      <BambooThemeProvider mode="light">
+        <RecoilRoot>
+          <QueryClientProvider client={queryClientRef.current}>
+            <Hydrate state={pageProps.dehydratedState}>
+              <Component {...pageProps} />
+            </Hydrate>
+            <ReactQueryDevtools />
+          </QueryClientProvider>
+        </RecoilRoot>
+      </BambooThemeProvider>
     </>
   );
 };

@@ -4,11 +4,16 @@ import {
   InferGetServerSidePropsType,
 } from "next";
 
+import { Button } from "@bamboo/ui";
+
 export default function Docs({
   post,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
+      <Button color="black" size="md">
+        abc
+      </Button>
       {post.map((v: any, idx: number) => (
         <div key={idx}>{v.title}</div>
       ))}
