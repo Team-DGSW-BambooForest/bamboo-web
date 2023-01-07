@@ -23,7 +23,7 @@ const Template: ComponentStory<typeof Confirm> = (args) => (
             취소
           </Button>
           <Button color="primary" size="sm">
-            확인
+            삭제
           </Button>
         </ButtonWrapper>
       </Confirm>
