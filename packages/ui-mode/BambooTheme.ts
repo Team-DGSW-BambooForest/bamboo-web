@@ -1,13 +1,21 @@
 export const light = {
   white: "#fff",
-  black: "#000",
-  whiteInText: "#fff",
-  blackInText: "#000",
+  black: "#2F2F2F",
+  darkGray: "#4B4B4B",
+  gray: "#ADADAD",
+  lightGray: "#F3F4F6",
+  primaryColor: "linear-gradient(99.09deg, #49E7BA 0%, #37DC81 100%)",
+  aqua: "#49E7BA",
+  green: "#37DC81",
 };
 
 export const dark = {
-  white: "#000",
-  black: "#fff",
-  whiteInText: "#000",
-  blackInText: "#fff",
+  white: "#fff",
+  black: "#2F2F2F",
+  darkGray: "#4B4B4B",
+  gray: "#ADADAD",
+  lightGray: "#F3F4F6",
+  primaryColor: "linear-gradient(99.09deg, #49E7BA 0%, #37DC81 100%)",
+  aqua: "#49E7BA",
+  green: "#37DC81",
 };

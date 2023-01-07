@@ -1,8 +1,6 @@
-import { MouseEventHandler } from "react";
+export type ColorType = "primary" | "cancel";
 
-export type ColorType = "black" | "white";
-
-export type SizeType = "lg" | "md" | "sm";
+export type SizeType = "lg" | "sm";
 
 export interface ButtonProps {
   size: SizeType;

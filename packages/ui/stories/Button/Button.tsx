@@ -1,13 +1,13 @@
 import * as React from "react";
 import { ButtonProps } from "./button.interface";
-import { ButtonBox } from "./button.style";
+import { ButtonBox, ButtonWrapperStyle } from "./button.style";
 
 export const Button = ({
   children,
   disable = false,
   onClick,
-  color = "black",
-  size = "md",
+  color = "primary",
+  size = "sm",
 }: React.PropsWithChildren<ButtonProps>): any => {
   return (
     <ButtonBox
@@ -19,4 +19,13 @@ export const Button = ({
       {children}
     </ButtonBox>
   );
+};
+
+type ButtonWrapperProps = {
+  children: React.ReactNode;
+  align: "flex-end" | "flex-start" | "center";
+};
+
+export const ButtonWrapper = ({ children, align }: ButtonWrapperProps) => {
+  return <ButtonWrapperStyle align={align}>{children}</ButtonWrapperStyle>;
 };

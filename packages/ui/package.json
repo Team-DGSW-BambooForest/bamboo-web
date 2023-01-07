@@ -11,6 +11,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",
+    "@bamboo/styled-theme": "*",
+    "@bamboo/ui-mode": "*",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.13",
     "@storybook/addon-interactions": "^6.5.13",
@@ -22,14 +24,14 @@
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "babel-loader": "^8.3.0",
+    "chromatic": "^6.14.0",
+    "custom-util": "*",
     "eslint": "^7.32.0",
     "eslint-config-custom": "*",
+    "next": "13.0.0",
     "react": "^18.2.0",
     "tsconfig": "*",
-    "typescript": "^4.5.2",
-    "custom-util": "*",
-    "@bamboo/ui-mode": "*",
-    "@bamboo/styled-theme": "*"
+    "typescript": "^4.5.2"
   },
   "dependencies": {}
 }
