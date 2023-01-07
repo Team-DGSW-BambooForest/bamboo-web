@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const CofirmContainer = styled.div`
-  padding: 20px;
   box-sizing: border-box;
 
   * {
@@ -10,21 +9,34 @@ export const CofirmContainer = styled.div`
     margin: 0;
   }
 
-  background-color: #fff;
+  font-family: "Noto Sans KR";
+  font-style: normal;
 
-  width: 400px;
-  height: 250px;
-  border-radius: 10px;
+  hr {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #f2f2f2;
+  }
+`;
 
-  border: 1px solid black;
+export const ConfirmHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 23px;
+  }
+  div {
+    cursor: pointer;
+  }
 `;
 
 export const ConfirmContent = styled.div`
-  height: 180px;
-`;
-
-export const ConfirmBottom = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  margin-bottom: 12px;
 `;

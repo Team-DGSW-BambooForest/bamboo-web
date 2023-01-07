@@ -15,28 +15,28 @@ export const ButtonBox = styled.div<{
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
 
-  border-radius: 5px;
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+
+  border-radius: 10px;
 
   cursor: ${({ disable = false }) => (disable ? "not-allowed" : "pointer")};
+
   ${({ color }) => colorStyle[color]}
   ${({ size }) => sizeStyle[size]}
 `;
 
 const sizeStyle: Record<SizeType, FlattenSimpleInterpolation> = {
   lg: css`
-    width: 200px;
-    height: 50px;
-  `,
-  md: css`
-    width: 100px;
-    height: 25px;
+    width: 396px;
+    height: 34px;
   `,
   sm: css`
-    width: 50px;
-    height: 12px;
-    font-size: 10px;
+    width: 64px;
+    height: 32px;
   `,
 };
 
@@ -44,16 +44,24 @@ const colorStyle: Record<
   ColorType,
   FlattenInterpolation<ThemeProps<ColorThemeType>>
 > = {
-  black: css`
-    background-color: ${(props: ThemeProps<ColorThemeType>) =>
-      props.theme.colors?.black};
-    color: ${(props: ThemeProps<ColorThemeType>) =>
-      props.theme.colors?.whiteInText};
+  primary: css`
+    background: ${(props: ThemeProps<ColorThemeType>) =>
+      props.theme.colors?.primaryColor};
+    color: ${(props: ThemeProps<ColorThemeType>) => props.theme.colors?.white};
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
   `,
-  white: css`
-    background-color: ${(props: ThemeProps<ColorThemeType>) =>
+  cancel: css`
+    background: ${(props: ThemeProps<ColorThemeType>) =>
       props.theme.colors?.white};
-    color: ${(props: ThemeProps<ColorThemeType>) =>
-      props.theme.colors?.blackInText};
+    color: ${(props: ThemeProps<ColorThemeType>) => props.theme.colors?.aqua};
   `,
 };
+
+export const ButtonWrapperStyle = styled.div<{
+  align: "flex-end" | "flex-start" | "center";
+}>`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: ${({ align }) => align};
+`;
