@@ -25,5 +25,5 @@
     "recoil": "^0.7.6",
     "styled-components": "^5.3.6"
   },
-  "packageManager": "yarn@1.22.17"
+  "packageManager": "yarn@1.22.19"
 }
