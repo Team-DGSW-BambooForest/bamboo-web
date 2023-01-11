@@ -13,8 +13,8 @@ const TextObject = {
     content: "이 게시물에서 다른 프로필로 활동하려면 전환하세요.",
   },
   comment: {
-    title: "댓글을 삭제하시겠습니까?",
-    content: "이 댓글을 삭제하시겠습니까?",
+    title: "댓글을 작성하시겠습니까?",
+    content: "이 댓글을 작성하시겠습니까?",
   },
   write: {
     title: "제보하시겠습니까?",

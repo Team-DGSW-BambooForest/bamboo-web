@@ -4,11 +4,11 @@ import { CardSizeType } from "./card.interface";
 import { CardContainer } from "./card.style";
 
 type CardProps = {
-  children: ReactNode;
+  children?: ReactNode;
   size: CardSizeType;
 };
 
-const Card = ({ children, size = "lg" }: CardProps) => {
+export const Card = ({ children, size = "lg" }: CardProps) => {
   return (
     <CardContainer
       size={size}
@@ -20,5 +20,3 @@ const Card = ({ children, size = "lg" }: CardProps) => {
     </CardContainer>
   );
 };
-
-export default Card;

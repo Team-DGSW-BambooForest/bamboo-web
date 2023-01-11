@@ -8,5 +8,6 @@ export type ColorThemeType = {
     readonly primaryColor: string;
     readonly aqua: string;
     readonly green: string;
+    readonly blackFont: string;
   };
 };

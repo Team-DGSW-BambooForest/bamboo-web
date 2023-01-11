@@ -7,6 +7,7 @@ export const light = {
   primaryColor: "linear-gradient(99.09deg, #49E7BA 0%, #37DC81 100%)",
   aqua: "#49E7BA",
   green: "#37DC81",
+  blackFont: "#2f2f2f",
 };
 
 export const dark = {
@@ -18,4 +19,5 @@ export const dark = {
   primaryColor: "linear-gradient(99.09deg, #49E7BA 0%, #37DC81 100%)",
   aqua: "#49E7BA",
   green: "#37DC81",
+  blackFont: "#2f2f2f",
 };
