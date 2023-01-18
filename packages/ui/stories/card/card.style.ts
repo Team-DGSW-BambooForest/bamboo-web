@@ -1,8 +1,8 @@
 import styled, { css, FlattenSimpleInterpolation } from "styled-components";
-import { CardSizeType } from "./card.interface";
+import { SizeType } from "../../interface/size.type";
 
 export const CardContainer = styled.div<{
-  size: CardSizeType;
+  size: SizeType;
 }>`
   padding-top: 18px;
   padding-bottom: 18px;
@@ -11,7 +11,7 @@ export const CardContainer = styled.div<{
   ${({ size }) => sizeStyle[size]}
 `;
 
-const sizeStyle: Record<CardSizeType, FlattenSimpleInterpolation> = {
+const sizeStyle: Record<SizeType, FlattenSimpleInterpolation> = {
   lg: css`
     width: 580px;
     border-radius: 15px;

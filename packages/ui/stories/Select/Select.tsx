@@ -1,4 +1,5 @@
 import React from "react";
+import { Avatar } from "../Avatar/Avatar";
 import { itemType, SelectItemProps, SelectProps } from "./select.interface";
 import { SelectContainer, SelectItemContainer } from "./select.style";
 
@@ -24,11 +25,12 @@ export const SelectItem = ({
   value,
   changeAction,
   currentProfile,
+  style,
 }: SelectItemProps) => {
   return (
-    <SelectItemContainer>
+    <SelectItemContainer style={style}>
       <label htmlFor={value.name}>
-        <img src={value.img} alt="" />
+        <Avatar src={value.img || ""} alt="" size="sm" />
         <span>{value.name}</span>
       </label>
       <input

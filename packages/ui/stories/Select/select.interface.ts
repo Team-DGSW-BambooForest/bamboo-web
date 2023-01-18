@@ -1,4 +1,5 @@
 import React from "react";
+import { CSSProperties } from "styled-components";
 
 export interface ChangeActionType {
   changeAction?: (e: HTMLInputElement) => void;
@@ -17,4 +18,5 @@ export interface SelectProps extends ChangeActionType {
 export interface SelectItemProps extends ChangeActionType {
   value: itemType;
   currentProfile?: string;
+  style?: CSSProperties;
 }

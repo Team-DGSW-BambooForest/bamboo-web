@@ -1,4 +1,5 @@
 import * as React from "react";
+import { CSSProperties } from "styled-components";
 import { ButtonProps } from "./button.interface";
 import { ButtonBox, ButtonWrapperStyle } from "./button.style";
 
@@ -8,6 +9,7 @@ export const Button = ({
   onClick,
   color = "primary",
   size = "sm",
+  style,
 }: React.PropsWithChildren<ButtonProps>): any => {
   return (
     <ButtonBox
@@ -15,6 +17,7 @@ export const Button = ({
       color={color}
       size={size}
       disable={disable}
+      style={style}
     >
       {children}
     </ButtonBox>
@@ -24,8 +27,17 @@ export const Button = ({
 type ButtonWrapperProps = {
   children: React.ReactNode;
   align: "flex-end" | "flex-start" | "center";
+  style?: CSSProperties;
 };
 
-export const ButtonWrapper = ({ children, align }: ButtonWrapperProps) => {
-  return <ButtonWrapperStyle align={align}>{children}</ButtonWrapperStyle>;
+export const ButtonWrapper = ({
+  children,
+  align,
+  style,
+}: ButtonWrapperProps) => {
+  return (
+    <ButtonWrapperStyle align={align} style={style}>
+      {children}
+    </ButtonWrapperStyle>
+  );
 };
