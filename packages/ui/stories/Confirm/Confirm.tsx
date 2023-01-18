@@ -1,5 +1,5 @@
 import React from "react";
-import { ConfirmProps } from "./confirm.interface";
+import { ConfrimTypeProps } from "./confirm.interface";
 import {
   CofirmContainer,
   ConfirmContent,
@@ -26,9 +26,9 @@ const TextObject = {
   },
 };
 
-export const Confirm = ({ close, text, children }: ConfirmProps) => {
+export const Confirm = ({ close, text, children, style }: ConfrimTypeProps) => {
   return (
-    <CofirmContainer>
+    <CofirmContainer style={style}>
       <ConfirmHeader>
         <p>{TextObject[text].title}</p>
         <div onClick={() => close(true)}>

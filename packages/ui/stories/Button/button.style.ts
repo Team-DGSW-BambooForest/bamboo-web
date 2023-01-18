@@ -4,13 +4,14 @@ import styled, {
   FlattenSimpleInterpolation,
   ThemeProps,
 } from "styled-components";
-import { ColorType, SizeType } from "./button.interface";
+import { ColorType } from "./button.interface";
 import { ColorThemeType } from "@bamboo/ui-mode";
+import { SizeType } from "../../interface/size.type";
 
 export const ButtonBox = styled.div<{
   color: ColorType;
   disable: boolean;
-  size: SizeType;
+  size: Exclude<SizeType, "md">;
 }>`
   display: flex;
   align-items: center;
@@ -29,7 +30,7 @@ export const ButtonBox = styled.div<{
   ${({ size }) => sizeStyle[size]}
 `;
 
-const sizeStyle: Record<SizeType, FlattenSimpleInterpolation> = {
+const sizeStyle: Record<Exclude<SizeType, "md">, FlattenSimpleInterpolation> = {
   lg: css`
     width: 396px;
     height: 34px;

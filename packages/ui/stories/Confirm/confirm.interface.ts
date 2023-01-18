@@ -1,4 +1,5 @@
 import { Dispatch, PropsWithChildren, ReactNode, SetStateAction } from "react";
+import { CSSProperties } from "styled-components";
 
 /**
  * close: 모달 닫기 Dispatch
@@ -9,6 +10,7 @@ import { Dispatch, PropsWithChildren, ReactNode, SetStateAction } from "react";
 interface ConfirmType {
   close: Dispatch<SetStateAction<boolean>>;
   text: "comment" | "write" | "delete" | "choose";
+  style?: CSSProperties;
 }
 
 export type ConfrimTypeProps = PropsWithChildren<ConfirmType>;
