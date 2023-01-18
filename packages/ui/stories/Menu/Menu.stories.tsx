@@ -20,7 +20,7 @@ const IMG_URL =
 const Template: ComponentStory<typeof Menu> = (args) => (
   <BambooThemeProvider mode="light">
     <div style={{ height: "100px" }}>
-      <Wrapper flex relative>
+      <Wrapper flex>
         <Avatar src={IMG_URL} size="sm" style={{ marginRight: "8px" }} />
         <div style={{ marginRight: "12px" }}>메뉴 입니다</div>
         <Menu {...args} />

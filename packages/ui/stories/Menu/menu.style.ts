@@ -8,11 +8,12 @@ export const MenuToggleButton = styled.div`
   :hover {
     background-color: #eee;
   }
+  position: relative;
 `;
 export const MenuList = styled.div`
   position: absolute;
-  bottom: -4px;
-  left: 0;
+  bottom: -10px;
+  right: -100%;
   transform: translate(0%, 100%);
 
   width: 174px;

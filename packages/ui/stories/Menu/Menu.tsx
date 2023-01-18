@@ -12,8 +12,8 @@ export const Menu = ({ children }: MenuProps) => {
     <>
       <MenuToggleButton onClick={changeToggle}>
         <img src={menuImg} alt="menu" />
+        {toggle && <MenuList>{children}</MenuList>}
       </MenuToggleButton>
-      {toggle && <MenuList>{children}</MenuList>}
     </>
   );
 };

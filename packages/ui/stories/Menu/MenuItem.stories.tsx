@@ -19,7 +19,7 @@ const IMG_URL =
 const Template: ComponentStory<typeof MenuItem> = (args) => (
   <BambooThemeProvider mode="light">
     <div style={{ height: "100px" }}>
-      <Wrapper flex relative>
+      <Wrapper flex align="center">
         <Menu>
           <MenuItem {...args} />
           <MenuItem {...args} />
