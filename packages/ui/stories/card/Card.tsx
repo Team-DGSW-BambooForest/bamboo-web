@@ -6,7 +6,7 @@ import { CardContainer } from "./card.style";
 
 type CardProps = {
   children?: ReactNode;
-  size: Exclude<SizeType, "md">;
+  size: SizeType;
   style?: CSSProperties;
 };
 
