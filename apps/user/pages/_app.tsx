@@ -6,11 +6,15 @@ import { Hydrate } from "react-query/hydration";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { RecoilRoot } from "recoil";
 import { BambooThemeProvider } from "@bamboo/styled-theme";
+import Layout from "../components/common/Layout/Layout";
+import Header from "../components/common/Header/Header";
+import ProfileBar from "../components/common/Profile/ProfileBar";
+import { GlobalStyles } from "../components/common/global/style/GlobalStyle";
 
 const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
   Component,
   pageProps,
-}) => {
+}: any) => {
   const queryClientRef = React.useRef<QueryClient>();
   if (!queryClientRef.current) {
     queryClientRef.current = new QueryClient();
@@ -18,11 +22,16 @@ const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
 
   return (
     <>
+      <GlobalStyles />
       <BambooThemeProvider mode="light">
         <RecoilRoot>
           <QueryClientProvider client={queryClientRef.current}>
             <Hydrate state={pageProps.dehydratedState}>
-              <Component {...pageProps} />
+              <ProfileBar />
+              <Header />
+              <Layout>
+                <Component {...pageProps} />
+              </Layout>
             </Hydrate>
             <ReactQueryDevtools />
           </QueryClientProvider>

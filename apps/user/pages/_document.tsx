@@ -6,7 +6,6 @@ import Document, {
   DocumentContext,
 } from "next/document";
 import { ServerStyleSheet } from "styled-components";
-import { AppType } from "vite";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -15,7 +14,7 @@ class MyDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App) => (props) =>
+          enhanceApp: (App: any) => (props) =>
             sheet.collectStyles(<App {...props} />),
         });
 
