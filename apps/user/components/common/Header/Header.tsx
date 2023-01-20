@@ -1,23 +1,27 @@
 import React from "react";
-import styled from "styled-components";
-
+import {
+  HeaderLeftSection,
+  HeaderLogoutText,
+  HeaderSeacrhInput,
+  HeaderSearchContainer,
+  HeaderStyle,
+} from "./style";
+import Image from "next/image";
+import Logo from "../../../asset/logo/Logo.svg";
+import searchIcon from "../../../asset/icon/searchIcon.svg";
 const Header = () => {
-  return <HeaderStyle>header</HeaderStyle>;
+  return (
+    <HeaderStyle>
+      <HeaderLeftSection>
+        <Image src={Logo} alt="" style={{ marginLeft: "56px" }} />
+        <HeaderSearchContainer>
+          <Image src={searchIcon} alt="" />
+          <HeaderSeacrhInput placeholder="검색어를 입력하세요" />
+        </HeaderSearchContainer>
+      </HeaderLeftSection>
+      <HeaderLogoutText>로그아웃</HeaderLogoutText>
+    </HeaderStyle>
+  );
 };
-
-const HeaderStyle = styled.div`
-  /* position */
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  /* size */
-  width: 100%;
-  height: 80px;
-
-  /* color */
-  background: #ffffff;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-`;
 
 export default Header;
