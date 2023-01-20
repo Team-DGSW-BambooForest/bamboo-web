@@ -10,20 +10,21 @@
     "cypress": "cypress open"
   },
   "dependencies": {
+    "@bamboo/styled-theme": "*",
+    "@bamboo/ui": "*",
     "@testing-library/react": "^13.4.0",
+    "custom-hooks": "*",
     "custom-util": "*",
     "cypress": "^12.0.1",
     "jest": "^29.3.1",
     "next": "13.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-query": "^3.39.2",
-    "@bamboo/ui": "*",
-    "custom-hooks": "*",
-    "@bamboo/styled-theme": "*"
+    "react-query": "^3.39.2"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
+    "@svgr/webpack": "^6.5.1",
     "@testing-library/dom": "^8.19.0",
     "@types/node": "^17.0.12",
     "@types/react": "^18.0.22",
