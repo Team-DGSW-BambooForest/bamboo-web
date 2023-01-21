@@ -37,3 +37,8 @@ export const clearToken = () => {
   cookies.remove("accessToken");
   cookies.remove("refreshToken");
 };
+
+export const checkAccessToken = () => {
+  const tokenValue = cookies.get("accessToken");
+  return tokenValue ? true : false;
+};
