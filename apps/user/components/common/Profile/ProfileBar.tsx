@@ -1,17 +1,23 @@
+import { Avatar } from "@bamboo/ui";
 import React from "react";
-import styled from "styled-components";
+import profile from "../../../asset/common/profile.png";
+import {
+  ProfileBarContainer,
+  ProfileContainer,
+  UserRole,
+  UserRoleText,
+} from "./style";
 
 const ProfileBar = () => {
-  return <ProfileBarDiv>profilebar</ProfileBarDiv>;
+  return (
+    <ProfileBarContainer>
+      <ProfileContainer>
+        <Avatar size="lg" src={profile.src} />
+        <UserRole>백승하</UserRole>
+        <UserRoleText>기명으로 제보를 할 수 있어요!</UserRoleText>
+      </ProfileContainer>
+    </ProfileBarContainer>
+  );
 };
-
-const ProfileBarDiv = styled.div`
-  width: 360px;
-  height: calc(100vh - 80px);
-  background-color: pink;
-  position: fixed;
-  top: 80px;
-  left: 0;
-`;
 
 export default ProfileBar;
