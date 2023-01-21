@@ -5,7 +5,6 @@ type CookieType = {
   accessToken: string;
   refreshToken: string;
 };
-
 const cookies = new Cookies();
 
 export const getToken = (): CookieType => {

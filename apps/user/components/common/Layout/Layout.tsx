@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { OnlyChildrenProps } from "../../../interface/OnlyChildren";
+import { OnlyChildrenProps } from "../../../types/OnlyChildren";
 
 const Layout = ({ children }: OnlyChildrenProps) => {
   return <LayoutStyle>{children}</LayoutStyle>;
