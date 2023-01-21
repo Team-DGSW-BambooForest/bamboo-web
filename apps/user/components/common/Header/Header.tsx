@@ -21,11 +21,7 @@ const Header = () => {
           <HeaderSeacrhInput placeholder="검색어를 입력하세요" />
         </HeaderSearchContainer>
       </HeaderLeftSection>
-      {
-        <HeaderLogoutText onClick={() => clearToken()}>
-          로그아웃
-        </HeaderLogoutText>
-      }
+      {<HeaderLogoutText onClick={clearToken}>로그아웃</HeaderLogoutText>}
     </HeaderStyle>
   );
 };
