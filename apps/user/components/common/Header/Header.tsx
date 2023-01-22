@@ -9,9 +9,10 @@ import {
 import Image from "next/image";
 import Logo from "../../../asset/logo/Logo.svg";
 import searchIcon from "../../../asset/icon/searchIcon.svg";
-import { clearToken } from "custom-util";
+import { checkAccessToken, clearToken } from "custom-util";
 
 const Header = () => {
+  const { tokenValue } = checkAccessToken();
   return (
     <HeaderStyle>
       <HeaderLeftSection>
@@ -21,7 +22,11 @@ const Header = () => {
           <HeaderSeacrhInput placeholder="검색어를 입력하세요" />
         </HeaderSearchContainer>
       </HeaderLeftSection>
-      {<HeaderLogoutText onClick={clearToken}>로그아웃</HeaderLogoutText>}
+      {tokenValue ? (
+        <HeaderLogoutText>로그인</HeaderLogoutText>
+      ) : (
+        <HeaderLogoutText onClick={clearToken}>로그아웃</HeaderLogoutText>
+      )}
     </HeaderStyle>
   );
 };
