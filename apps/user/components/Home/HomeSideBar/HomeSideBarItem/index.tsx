@@ -16,10 +16,7 @@ import { DontDoThat } from "../../../../constant/sidebar";
 const HomeSideBarItem = () => {
   return (
     <>
-      <Card
-        size="sm"
-        style={{ height: "80px", display: "flex", cursor: "pointer" }}
-      >
+      <Card size="sm" style={{ display: "flex", cursor: "pointer" }}>
         <CardImg src={card1.src} />
         <CardInfoBox>
           <CardTitle>익명 제보하기</CardTitle>

@@ -20,8 +20,11 @@ export const HomeSideBarFooterLinkBox = styled.div`
 `;
 
 export const HomeSideBarFooterText = styled.p`
-  margin-right: 8px;
+  & + & {
+    border-left: 1px solid #adadad;
+  }
   cursor: pointer;
+  height: 8px;
 `;
 
 export const HomeSideFooterBottomText = styled.p`

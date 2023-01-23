@@ -7,8 +7,8 @@ export const HomeSideBarContainer = styled.div`
   width: 300px;
   min-height: 621px;
 
-  position: absolute;
-  top: 40px;
+  position: fixed;
+  top: 120px;
   right: 350px;
 
   gap: 18px;
