@@ -39,5 +39,7 @@ export const clearToken = () => {
 
 export const checkAccessToken = () => {
   const tokenValue = cookies.get("accessToken");
-  return tokenValue ? true : false;
+  return {
+    tokenValue,
+  };
 };
