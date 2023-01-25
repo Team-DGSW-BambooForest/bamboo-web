@@ -25,6 +25,7 @@ export const HomeSideBarFooterText = styled.p`
     padding-left: 8px;
     margin-left: 8px;
   }
+
   cursor: pointer;
   height: 8px;
   line-height: 0.7rem;
