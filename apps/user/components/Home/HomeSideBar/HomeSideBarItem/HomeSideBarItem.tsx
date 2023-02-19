@@ -8,7 +8,6 @@ import card4 from "../../../../asset/common/card4.svg";
 import { DontDoThat } from "../../../../constant/sidebar";
 import card12 from "../../../../asset/common/card12.png";
 import Image from "next/image";
-import useModal from "../../../../hooks/Common/useModal";
 import Write from "../../../Common/Write/Write";
 import {
   Card4Box,
@@ -17,6 +16,7 @@ import {
   CardInfoText,
   CardTitle,
 } from "./HomeSideBarItem.style";
+import useModal from "@bamboo/ui/stories/Modal/hooks/useModal";
 
 const HomeSideBarItem = () => {
   const { close, isOpened, open } = useModal();
