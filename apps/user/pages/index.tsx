@@ -1,6 +1,5 @@
 import React from "react";
-import Home from "../components/Home";
-import HomeSideBar from "../components/Home/HomeSideBar";
+import Home from "../components/Home/Home";
 
 const Index = () => {
   return <Home />;
