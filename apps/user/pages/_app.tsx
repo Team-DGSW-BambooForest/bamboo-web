@@ -6,10 +6,10 @@ import { Hydrate } from "react-query/hydration";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { RecoilRoot } from "recoil";
 import { BambooThemeProvider } from "@bamboo/styled-theme";
-import Layout from "../components/common/Layout/Layout";
-import Header from "../components/common/Header/Header";
-import ProfileBar from "../components/common/Profile/ProfileBar";
-import { GlobalStyles } from "../components/common/global/style/GlobalStyle";
+import Layout from "../components/Common/Layout/Layout";
+import Header from "../components/Common/Header/Header";
+import ProfileBar from "../components/Common/Profile/ProfileBar";
+import { GlobalStyles } from "../components/Common/Global/Style/GlobalStyle";
 
 const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
   Component,

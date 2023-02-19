@@ -17,6 +17,7 @@ export const HeaderStyle = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 50;
 `;
 
 export const HeaderLeftSection = styled.div`
