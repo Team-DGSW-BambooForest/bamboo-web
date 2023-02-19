@@ -1,4 +1,4 @@
-import { TestData } from "../../data/TestData";
+import { TestData } from "../../data/test.data";
 import HomeItem from "./HomeItem/HomeItem";
 import { HomeItemContainer } from "./HomeItem/HomeItem.style";
 import HomeSideBar from "./HomeSideBar/HomeSideBar";
