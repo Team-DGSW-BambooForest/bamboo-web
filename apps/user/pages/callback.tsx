@@ -1,5 +1,8 @@
-import { useRouter } from "next/router";
+import useLogin from "../hooks/Auth/useLogin";
 
-const AuthLoadingPage = () => {};
+const Callback = () => {
+  useLogin();
+  return <div>AuthLoadingPage</div>;
+};
 
-export default AuthLoadingPage;
+export default Callback;
