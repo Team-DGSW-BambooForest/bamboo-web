@@ -1,28 +1,22 @@
 import React from "react";
 import { Avatar, Card } from "@bamboo/ui";
-import Image from "next/image";
 import {
-  HomeItemCommentInput,
-  HomeItemCommentInputContainer,
-  HomeItemContainer,
   HomeItemContent,
   HomeItemDate,
   HomeItemHr,
   HomeItemInfo,
-  HomeItemInputContainer,
   HomeItemProfileContainer,
+  HomeItemTopWrap,
   HomeItemUserName,
 } from "./HomeItem.style";
 import { BiImageAlt } from "react-icons/bi";
-
+import CommentInput from "../../Common/CommentInput/CommentInput";
+import Haerin from "../../../asset/haerin.jpeg";
 interface Props {
   data: {
-    name: string;
     title: string;
     content: string;
-    hashTags: string;
-    date: string;
-    img: string;
+    hashTags: string[];
   };
 }
 
@@ -32,23 +26,19 @@ interface CommentType {
 
 const HomeItem = ({ data }: Props) => {
   return (
-    <Card size="lg" style={{ rowGap: "12px" }}>
-      <HomeItemProfileContainer>
-        <Avatar src={data.img.src} size="md" alt="" />
-        <HomeItemInfo>
-          <HomeItemUserName>{data.name}</HomeItemUserName>
-          <HomeItemDate>{data.date}</HomeItemDate>
-        </HomeItemInfo>
-      </HomeItemProfileContainer>
-      <HomeItemContent>{data.content}</HomeItemContent>
-      <HomeItemHr />
-      <HomeItemCommentInputContainer>
-        <Avatar size="sm" src={data.img.src} alt="" />
-        <HomeItemInputContainer>
-          <HomeItemCommentInput placeholder="댓글을 입력하세요" />
-          <BiImageAlt />
-        </HomeItemInputContainer>
-      </HomeItemCommentInputContainer>
+    <Card size="lg" style={{ paddingLeft: "24px" }}>
+      <HomeItemTopWrap>
+        <HomeItemProfileContainer>
+          <Avatar src={Haerin.src} size="md" alt="" />
+          <HomeItemInfo>
+            <HomeItemUserName>강해린</HomeItemUserName>
+            <HomeItemDate> </HomeItemDate>
+          </HomeItemInfo>
+        </HomeItemProfileContainer>
+        <HomeItemContent>{data.content}</HomeItemContent>
+        <HomeItemHr />
+      </HomeItemTopWrap>
+      <CommentInput />
     </Card>
   );
 };

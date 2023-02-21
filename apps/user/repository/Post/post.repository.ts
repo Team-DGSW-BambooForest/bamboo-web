@@ -1,19 +1,19 @@
 import { customAxios } from "custom-util";
-import { getPostsParam, writePostParam } from "./post.param";
+import { writePostParam } from "./post.param";
 import { PostResponse } from "./post.response";
 
 class PostRepository {
-  public async writePost({
-    title,
+  public async createPost({
     content,
     hashtags,
   }: writePostParam): Promise<void> {
-    await customAxios.post("/post", { title, content, hashtags });
+    await customAxios.post("/post/create", { content, hashtags });
   }
 
-  //   public async getPosts({ page }: getPostsParam): Promise<PostResponse> {
-  //     const { data } = await customAxios.get(``);
-  //   }
+  public async getPosts(): Promise<PostResponse> {
+    const { data } = await customAxios.get("/post/list");
+    return data;
+  }
 }
 
-export default PostRepository;
+export default new PostRepository();

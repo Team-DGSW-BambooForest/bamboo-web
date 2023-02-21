@@ -4,6 +4,7 @@ import {
   WriteAddText,
   WriteContainer,
   WriteImageWrap,
+  WritePostForm,
   WritePostInput,
   WriteTopText,
   WriteTopWrap,
@@ -15,14 +16,20 @@ import { MdOutlinePhotoCamera } from "react-icons/md";
 import { BiImageAlt } from "react-icons/bi";
 import Haerin from "../../../asset/Haerin.jpeg";
 import { Avatar, Button, Card } from "@bamboo/ui";
+import useWritePost from "../../../hooks/Post/useWritePost";
 
 interface Props {
   isOpened: boolean;
 }
 
 const Write = () => {
+  const { onChangePostDataText, onSubmitPostData, postData, setPostData } =
+    useWritePost();
   return (
-    <WriteContainer>
+    <Card
+      size="md"
+      style={{ display: "flex", flexDirection: "column", rowGap: "12px" }}
+    >
       <WriteTopWrap>
         <WriteTopText>기명 제보하기</WriteTopText>
         <AiOutlineClose style={{ marginRight: "18px" }} />
@@ -32,7 +39,12 @@ const Write = () => {
         <Avatar src={Haerin.src} alt="" size="sm" />
         <WriteUserName>강해린</WriteUserName>
       </WriteUserInfoWrap>
-      <WritePostInput placeholder="대대숲에 제보를 남겨보세요" />
+      <WritePostInput
+        name="content"
+        onChange={onChangePostDataText}
+        value={postData.content}
+        placeholder="대대숲에 제보를 남겨보세요"
+      />
       <WriteImageWrap>
         <WriteAddText>게시물에 추가</WriteAddText>
         <WriteAddImageWrap>
@@ -40,10 +52,10 @@ const Write = () => {
           <BiImageAlt />
         </WriteAddImageWrap>
       </WriteImageWrap>
-      <Button size="lg" color="primary">
+      <Button size="lg" color="primary" onClick={onSubmitPostData}>
         제보
       </Button>
-    </WriteContainer>
+    </Card>
   );
 };
 

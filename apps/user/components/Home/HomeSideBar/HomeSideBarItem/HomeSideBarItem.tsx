@@ -22,7 +22,10 @@ const HomeSideBarItem = () => {
   const { close, isOpened, open } = useModal();
   return (
     <>
-      <Card size="sm" style={{ display: "flex", cursor: "pointer" }}>
+      <Card
+        size="sm"
+        style={{ display: "flex", cursor: "pointer", zIndex: -1 }}
+      >
         <Image width={42} height={42} src={card1.src} alt="" />
         <CardInfoBox onClick={open}>
           <CardTitle>익명 제보하기</CardTitle>
@@ -32,13 +35,16 @@ const HomeSideBarItem = () => {
       <Modal isOpened={isOpened} onClose={close}>
         <Write />
       </Modal>
-      <Card size="sm" style={{ display: "flex", cursor: "pointer" }}>
+      <Card
+        size="sm"
+        style={{ display: "flex", cursor: "pointer", zIndex: -1 }}
+      >
         <CardInfoBox>
           <CardTitle>기명 제보하기</CardTitle>
           <CardInfoText>도담도담 계정으로 기명 제보합니다</CardInfoText>
         </CardInfoBox>
       </Card>
-      <Card size="sm" style={{ display: "flex" }}>
+      <Card size="sm" style={{ display: "flex", zIndex: -1 }}>
         <CardImg src={card3.src} />
         <CardInfoBox>
           <CardTitle>제보를 삭제하고 싶을 때</CardTitle>
@@ -48,7 +54,7 @@ const HomeSideBarItem = () => {
           </CardInfoText>
         </CardInfoBox>
       </Card>
-      <Card size="sm" style={{ display: "flex" }}>
+      <Card size="sm" style={{ display: "flex", zIndex: -1 }}>
         <Card4Box>
           <CardImg src={card4.src} />
           <div style={{ flexDirection: "column" }}>

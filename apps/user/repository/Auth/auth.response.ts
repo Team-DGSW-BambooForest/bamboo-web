@@ -1,7 +1,15 @@
-import { Response } from "../../types/Util/response.type";
-
-export interface LoginResponse extends Response {
-  name: string;
-  accessToken: string;
+export interface LoginResponse {
+  userEntity: {
+    userId: string;
+    uniqueId: string;
+    grade: string;
+    room: string;
+    number: string;
+    name: string;
+    profileImage: string;
+    email: string;
+    role: string;
+  };
+  token: string;
   refreshToken: string;
 }

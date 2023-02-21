@@ -1,5 +1,15 @@
-export interface PostResponse {
-  post_id: string;
+export interface PostDataType {
+  postId: string;
   title: string;
-  hasTags: string;
+  content: string;
+  hashTags: [
+    {
+      tagId: string;
+      hashTag: string;
+    }
+  ];
+}
+
+export interface PostResponse {
+  list: PostDataType[];
 }

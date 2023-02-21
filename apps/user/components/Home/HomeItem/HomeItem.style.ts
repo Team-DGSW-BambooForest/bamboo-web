@@ -1,7 +1,16 @@
 import styled from "styled-components";
 
+export const HomeItemTopWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  row-gap: 12px;
+`;
+
 export const HomeItemProfileContainer = styled.div`
   display: flex;
+
+  width: 100%;
 `;
 
 export const HomeItemInfo = styled.div`
@@ -9,19 +18,31 @@ export const HomeItemInfo = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-left: 12px;
+  row-gap: 4px;
 `;
 
-export const HomeItemUserName = styled.p``;
+export const HomeItemUserName = styled.p`
+  font-size: 16px;
 
-export const HomeItemDate = styled.p``;
+  color: #2f2f2f;
+`;
+
+export const HomeItemDate = styled.p`
+  font-size: 12px;
+  color: #afafaf;
+`;
 
 export const HomeItemContent = styled.p`
-  margin-top: 12px;
+  font-size: 14px;
+
+  color: #2f2f2f;
 `;
 
 export const HomeItemHr = styled.hr`
   width: 532px;
-  margin-top: 12px;
+  background: #f2f2f2;
+
+  border-bottom: none;
 `;
 
 export const HomeItemContainer = styled.div`
@@ -30,35 +51,4 @@ export const HomeItemContainer = styled.div`
   padding-top: 40px;
   row-gap: 28px;
   margin-left: 310px;
-`;
-
-export const HomeItemCommentInputContainer = styled.div`
-  min-width: 532px;
-  min-height: 34px;
-  display: flex;
-  margin-top: 12px;
-`;
-
-export const HomeItemInputContainer = styled.div`
-  display: flex;
-  align-items: center;
-  width: 490px;
-  height: 34px;
-  margin-left: 8px;
-  border-radius: 15px;
-  background-color: #f3f4f6;
-  padding-left: 16px;
-  padding-right: 9px;
-`;
-
-export const HomeItemCommentInput = styled.input`
-  width: 100%;
-  height: 100%;
-  border: none;
-  outline: none;
-  background: none;
-  ::placeholder {
-    color: #adadad;
-    font-size: 12px;
-  }
 `;
