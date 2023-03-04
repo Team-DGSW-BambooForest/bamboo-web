@@ -1,8 +1,8 @@
 import { useMutation, useQuery } from "react-query";
-import { fileParam } from "../../repository/File/file.param";
+import { fileParam, getFileParam } from "../../repository/File/file.param";
 import fileRepository from "../../repository/File/file.repository";
 
-export const useGetFileQuery = ({ postId }: fileParam) =>
+export const useGetFileQuery = ({ postId }: getFileParam) =>
   useQuery(
     ["file/useGetFile", postId],
     () => fileRepository.getFile({ postId }),

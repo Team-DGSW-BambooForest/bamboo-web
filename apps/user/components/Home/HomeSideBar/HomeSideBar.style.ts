@@ -12,6 +12,4 @@ export const HomeSideBarContainer = styled.div`
   right: 350px;
 
   gap: 18px;
-
-  z-index: -1;
 `;

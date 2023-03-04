@@ -8,14 +8,16 @@ type CardProps = {
   children?: ReactNode;
   size: SizeType;
   style?: CSSProperties;
+  onClick?: () => void;
 };
 
-export const Card = ({ children, size = "lg", style }: CardProps) => {
+export const Card = ({ children, size = "lg", style, onClick }: CardProps) => {
   return (
     <CardContainer
       size={size}
       onClick={(event: React.ChangeEvent<HTMLDivElement>) => {
         stopBubbling(event);
+        if (onClick !== undefined) onClick();
       }}
       style={style}
     >

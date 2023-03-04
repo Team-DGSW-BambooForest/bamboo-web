@@ -51,4 +51,29 @@ export const HomeItemContainer = styled.div`
   padding-top: 40px;
   row-gap: 28px;
   margin-left: 310px;
+
+  z-index: -100;
+`;
+
+export const HomeItemBottomWrap = styled.div`
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  row-gap: 12px;
+`;
+
+export const CommentCount = styled.p`
+  font-size: 12px;
+  color: #4b4b4b;
+
+  cursor: pointer;
+`;
+
+export const HomeItemImage = styled.img`
+  width: 300px;
+  height: 300px;
+
+  overflow: hidden;
 `;
