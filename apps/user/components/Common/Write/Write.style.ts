@@ -94,3 +94,8 @@ export const WritePostForm = styled.form`
 
   row-gap: 12px;
 `;
+
+export const DisableInput = styled.input`
+  visibility: hidden;
+  position: absolute;
+`;

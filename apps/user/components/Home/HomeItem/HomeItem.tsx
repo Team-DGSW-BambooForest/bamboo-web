@@ -17,6 +17,7 @@ import { useGetFileQuery } from "../../../queries/File/file.query";
 import { useGetCommentByIdQuery } from "../../../queries/Comment/Comment.query";
 import HandleChildComment from "../../Comment/HandleChildComment/HandleChildComment";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 interface Props {
   data: {
@@ -63,7 +64,9 @@ const HomeItem = ({ data, postId }: Props) => {
             </HomeItemInfo>
           </HomeItemProfileContainer>
           <HomeItemContent>{data.content}</HomeItemContent>
-          <HomeItemImage src={fileData || null} alt="" />
+          {fileData ? (
+            <Image src={fileData} width={100} height={100} alt="" />
+          ) : null}
           <HomeItemHr />
         </HomeItemTopWrap>
         <HomeItemBottomWrap>

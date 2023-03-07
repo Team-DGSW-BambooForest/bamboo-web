@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   HeaderLeftSection,
   HeaderLogoutText,
@@ -9,14 +9,20 @@ import {
 import Image from "next/image";
 import Logo from "../../../asset/logo/Logo.svg";
 import searchIcon from "../../../asset/icon/searchIcon.svg";
-import { checkAccessToken, clearToken } from "custom-util";
+import { clearToken } from "custom-util";
 import { useRouter } from "next/router";
 import { conf } from "custom-util/config";
+import { getToken } from "../../../util/localstorage";
 
 const Header = () => {
   const router = useRouter();
-  const { tokenValue } = checkAccessToken();
   const authUrl = `https://dauth.b1nd.com/login?client_id=${conf.clientId}&redirect_uri=http://localhost:3001/callback`;
+  const [tokenState, setTokenState] = useState<string | null>();
+
+  useEffect(() => {
+    setTokenState(getToken().accessToken);
+  }, [tokenState]);
+
   return (
     <HeaderStyle>
       <HeaderLeftSection>
@@ -31,7 +37,7 @@ const Header = () => {
           <HeaderSeacrhInput placeholder="검색어를 입력하세요" />
         </HeaderSearchContainer>
       </HeaderLeftSection>
-      {tokenValue ? (
+      {tokenState ? (
         <HeaderLogoutText onClick={clearToken}>로그아웃</HeaderLogoutText>
       ) : (
         <HeaderLogoutText onClick={() => (window.location.href = authUrl)}>

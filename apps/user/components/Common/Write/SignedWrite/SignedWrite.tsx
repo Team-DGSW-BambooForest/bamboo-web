@@ -8,28 +8,32 @@ import {
   WriteTopWrap,
   WriteUserInfoWrap,
   WriteUserName,
-  DisableInput,
-} from "./Write.style";
+} from "../Write.style";
 import { AiOutlineClose } from "react-icons/ai";
 import { MdOutlinePhotoCamera } from "react-icons/md";
 import { BiImageAlt } from "react-icons/bi";
 import { Avatar, Button, Card } from "@bamboo/ui";
-import useWritePost from "../../../hooks/Post/useWritePost";
-import anonymous from "../../../asset/anonymous.png";
-import { useRef, useState } from "react";
-import { ChangeEvent } from "react";
-import { useEffect } from "react";
-import { usePostFileQuery } from "../../../queries/File/file.query";
+import useWritePost from "../../../../hooks/Post/useWritePost";
+import { useGetUserQuery } from "../../../../queries/User/user.query";
+import { useEffect, useState } from "react";
+import { getToken } from "../../../../util/localstorage";
 
-const Write = ({ close }: { close: () => void }) => {
-  const {
-    onChangePostDataText,
-    onSubmitPostData,
-    postData,
-    changeFile,
-    fileRef,
-    inputClick,
-  } = useWritePost(close);
+const SignedWrite = ({ close }: { close: () => void }) => {
+  const { onChangePostDataText, signedOnSubmitPostData, postData } =
+    useWritePost(close);
+
+  const { data } = useGetUserQuery();
+
+  const [tokenState, setTokenState] = useState<string | null>();
+
+  useEffect(() => {
+    setTokenState(getToken().accessToken);
+
+    if (!tokenState) {
+      window.alert("로그인 후 제보할 수 있습니다.");
+      close();
+    }
+  }, [tokenState]);
 
   return (
     <Card
@@ -37,13 +41,13 @@ const Write = ({ close }: { close: () => void }) => {
       style={{ display: "flex", flexDirection: "column", rowGap: "12px" }}
     >
       <WriteTopWrap>
-        <WriteTopText>익명 제보하기</WriteTopText>
+        <WriteTopText>기명 제보하기</WriteTopText>
         <AiOutlineClose style={{ marginRight: "18px" }} />
       </WriteTopWrap>
       <WirteTopLine />
       <WriteUserInfoWrap>
-        <Avatar src={anonymous.src} alt="" size="sm" />
-        <WriteUserName>익명이</WriteUserName>
+        <Avatar src={data?.profileImage!!} alt="" size="sm" />
+        <WriteUserName>{data?.name}</WriteUserName>
       </WriteUserInfoWrap>
       <WritePostInput
         name="content"
@@ -55,15 +59,14 @@ const Write = ({ close }: { close: () => void }) => {
         <WriteAddText>게시물에 추가</WriteAddText>
         <WriteAddImageWrap>
           <MdOutlinePhotoCamera />
-          <BiImageAlt onClick={inputClick} />
-          <DisableInput type="file" ref={fileRef} onChange={changeFile} />
+          <BiImageAlt />
         </WriteAddImageWrap>
       </WriteImageWrap>
-      <Button size="lg" color="primary" onClick={onSubmitPostData}>
+      <Button size="lg" color="primary" onClick={signedOnSubmitPostData}>
         제보
       </Button>
     </Card>
   );
 };
 
-export default Write;
+export default SignedWrite;

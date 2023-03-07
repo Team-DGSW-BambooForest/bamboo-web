@@ -48,7 +48,9 @@ const HomeItemDetail = ({ data, postId }: Props) => {
           </S.TopItemInfo>
         </S.TopWrap>
         <S.ItemContent>{data?.content}</S.ItemContent>
-        <Image src={fileData} width={532} height={529} alt="" />
+        {fileData ? (
+          <Image src={fileData} width={532} height={529} alt="" />
+        ) : null}
         <HomeItemHr />
         <DetailInput postId={Number(data?.postId)} />
         {CommentsData?.map((data) => (
