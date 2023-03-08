@@ -24,7 +24,7 @@ const CommentInput = ({ postId }: Props) => {
   });
   return (
     <HomeItemCommentBox onClick={(e) => stopBubbling(e)}>
-      <Avatar size="sm" src={Haerin.src} alt="" />
+      <Avatar size="sm" src={Haerin.src} alt="이미지 없음" />
       <HomeItemCommentForm onSubmit={onSubmit}>
         <HomeItemInputBox>
           <HomeItemInputContainer>

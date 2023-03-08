@@ -14,7 +14,7 @@ import Haerin from "../../../asset/haerin.jpeg";
 const CommentInput = () => {
   return (
     <HomeItemCommentBox>
-      <Avatar size="sm" src={Haerin.src} alt="" />
+      <Avatar size="sm" src={Haerin.src} alt="이미지 없음" />
       <HomeItemInputBox>
         <HomeItemInputContainer>
           <HomeItemCommentInput placeholder="댓글을 입력하세요" />

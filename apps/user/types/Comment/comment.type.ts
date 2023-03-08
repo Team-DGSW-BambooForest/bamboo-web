@@ -6,7 +6,7 @@ export interface CommentType {
   diffTime: string;
 }
 
-export interface getComments {
+export interface GetComments {
   comment: {
     id: number;
     profileImage: string;

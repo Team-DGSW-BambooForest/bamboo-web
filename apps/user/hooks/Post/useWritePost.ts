@@ -41,8 +41,8 @@ const useWritePost = (close: () => void) => {
   const onSubmitPostData = () => {
     const { content, hashtags } = postData;
 
-    if (content === "") {
-      window.alert("내용을 입력해주세요");
+    if (/[^\s]/.test(content)) {
+      alert("텍스트를 입력해주세요");
       return;
     }
 

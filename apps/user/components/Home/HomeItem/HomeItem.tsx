@@ -57,16 +57,16 @@ const HomeItem = ({ data, postId }: Props) => {
       >
         <HomeItemTopWrap>
           <HomeItemProfileContainer>
-            <Avatar src={data.profileImage} size="md" alt="" />
+            <Avatar src={data.profileImage} size="md" alt="이미지 없음" />
             <HomeItemInfo>
               <HomeItemUserName>{data.author}</HomeItemUserName>
               <HomeItemDate>{date}</HomeItemDate>
             </HomeItemInfo>
           </HomeItemProfileContainer>
           <HomeItemContent>{data.content}</HomeItemContent>
-          {fileData ? (
-            <Image src={fileData} width={100} height={100} alt="" />
-          ) : null}
+          {fileData && (
+            <Image src={fileData} width={100} height={100} alt="이미지 없음" />
+          )}
           <HomeItemHr />
         </HomeItemTopWrap>
         <HomeItemBottomWrap>

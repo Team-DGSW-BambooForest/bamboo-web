@@ -18,7 +18,7 @@ const ChilderenCommentInput = ({ parentCommentId, postId }: Props) => {
   });
   return (
     <S.DetailCommentBox onClick={(e) => stopBubbling(e)}>
-      <Avatar size="sm" src={Haerin.src} alt="" />
+      <Avatar size="sm" src={Haerin.src} alt="이미지 없음" />
       <S.DetailCommentForm onSubmit={onSubmit}>
         <S.DetailInputBox>
           <S.DetailItemInputContainer>

@@ -46,7 +46,7 @@ const SignedWrite = ({ close }: { close: () => void }) => {
       </WriteTopWrap>
       <WirteTopLine />
       <WriteUserInfoWrap>
-        <Avatar src={data?.profileImage!!} alt="" size="sm" />
+        <Avatar src={data?.profileImage!!} alt="이미지 없음" size="sm" />
         <WriteUserName>{data?.name}</WriteUserName>
       </WriteUserInfoWrap>
       <WritePostInput

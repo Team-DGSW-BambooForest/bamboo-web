@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const MainDetailContainer = styled.div`
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+`;
+
 export const DetailContainer = styled.div`
   padding-left: 310px;
 

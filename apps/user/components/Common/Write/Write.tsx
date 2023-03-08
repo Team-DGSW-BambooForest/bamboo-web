@@ -42,7 +42,7 @@ const Write = ({ close }: { close: () => void }) => {
       </WriteTopWrap>
       <WirteTopLine />
       <WriteUserInfoWrap>
-        <Avatar src={anonymous.src} alt="" size="sm" />
+        <Avatar src={anonymous.src} alt="이미지 없음" size="sm" />
         <WriteUserName>익명이</WriteUserName>
       </WriteUserInfoWrap>
       <WritePostInput

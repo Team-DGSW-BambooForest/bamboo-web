@@ -25,7 +25,7 @@ const HomeSideBarItem = () => {
   return (
     <>
       <Card size="sm" style={{ display: "flex", cursor: "pointer" }}>
-        <Image width={42} height={42} src={card1} alt="" />
+        <Image width={42} height={42} src={card1.src} alt="이미지 없음" />
         <CardInfoBox onClick={modal1.open}>
           <CardTitle>익명 제보하기</CardTitle>
           <CardInfoText>로그인 없이 익명으로 제보합니다</CardInfoText>

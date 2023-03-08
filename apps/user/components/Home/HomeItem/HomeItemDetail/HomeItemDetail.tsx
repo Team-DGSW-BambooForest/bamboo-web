@@ -48,9 +48,9 @@ const HomeItemDetail = ({ data, postId }: Props) => {
           </S.TopItemInfo>
         </S.TopWrap>
         <S.ItemContent>{data?.content}</S.ItemContent>
-        {fileData ? (
-          <Image src={fileData} width={532} height={529} alt="" />
-        ) : null}
+        {fileData && (
+          <Image src={fileData} width={532} height={529} alt="이미지 없음" />
+        )}
         <HomeItemHr />
         <DetailInput postId={Number(data?.postId)} />
         {CommentsData?.map((data) => (

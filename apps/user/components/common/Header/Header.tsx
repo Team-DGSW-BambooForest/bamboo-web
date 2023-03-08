@@ -29,11 +29,11 @@ const Header = () => {
         <Image
           onClick={() => router.push("/")}
           src={Logo}
-          alt=""
+          alt="이미지 없음"
           style={{ marginLeft: "56px" }}
         />
         <HeaderSearchContainer>
-          <Image src={searchIcon} alt="" />
+          <Image src={searchIcon} alt="이미지 없음" />
           <HeaderSeacrhInput placeholder="검색어를 입력하세요" />
         </HeaderSearchContainer>
       </HeaderLeftSection>
