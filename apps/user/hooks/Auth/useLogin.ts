@@ -1,8 +1,8 @@
-import { setToken } from "custom-util";
+import { setToken } from "../../util/localstorage";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
 import { useEffect } from "react";
-import AuthRepository from "../../repository/auth/auth.repository";
+import authRepository from "../../repository/Auth/auth.repository";
 
 const useLogin = () => {
   const router = useRouter();
@@ -10,11 +10,10 @@ const useLogin = () => {
 
   const request = useCallback(async () => {
     try {
-      const { accessToken, refreshToken } = await AuthRepository.login({
+      const { token, refreshToken } = await authRepository.login({
         code: query.code as string,
       });
-      setToken("accessToken", accessToken);
-      setToken("refreshToken", refreshToken);
+      setToken(token, refreshToken);
       router.push("/");
     } catch (error) {
       console.log(error);

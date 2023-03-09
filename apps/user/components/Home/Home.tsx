@@ -1,17 +1,21 @@
-import { TestData } from "../../data/test.data";
+import { useGetPostsQuery } from "../../queries/Post/post.query";
 import HomeItem from "./HomeItem/HomeItem";
 import { HomeItemContainer } from "./HomeItem/HomeItem.style";
 import HomeSideBar from "./HomeSideBar/HomeSideBar";
 
 const Home = () => {
+  const { data: PostData } = useGetPostsQuery();
+
   return (
     <>
-      <HomeItemContainer>
-        {TestData.map((data) => (
-          <HomeItem data={data} key={data.title} />
-        ))}
-      </HomeItemContainer>
-      <HomeSideBar />
+      <div style={{ width: "100%", minHeight: "100vh", background: "#FBFCFF" }}>
+        <HomeItemContainer>
+          {PostData?.list.map((data) => (
+            <HomeItem data={data} postId={data.postId} key={data.postId} />
+          ))}
+        </HomeItemContainer>
+        <HomeSideBar />
+      </div>
     </>
   );
 };

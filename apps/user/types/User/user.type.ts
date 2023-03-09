@@ -1,20 +1,13 @@
-import { Response } from "../Util/response.type";
+export type UserRole = "ADMIN" | "STUDENT";
 
-export interface UserInfo {
-  email: string;
+export interface UserResponse {
+  userId: number;
+  uniqueId: number;
+  grade: number;
+  room: number;
+  number: number;
   name: string;
   profileImage: string;
-  roles: UserRole;
-  stdInfo: {
-    grade: number;
-    number: number;
-    room: number;
-  };
-  userId: number;
+  email: string;
+  role: string;
 }
-
-export interface UserResponse extends Response {
-  data: UserInfo;
-}
-
-export type UserRole = "ADMIN" | "STUDENT";

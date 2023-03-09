@@ -13,8 +13,8 @@ const HomeSideBarFooter = () => {
         {FooterOp.map((list) => (
           <>
             <HomeSideBarFooterText
-              key={`${list.title}`}
               onClick={() => window.open(`${list.link}`)}
+              key={list.link}
             >
               {list.title}
             </HomeSideBarFooterText>

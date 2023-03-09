@@ -1,6 +1,5 @@
 import { Card, Modal } from "@bamboo/ui";
 import React from "react";
-
 import card1 from "../../../../asset/common/card1.svg";
 import card2 from "../../../../asset/common/card2.svg";
 import card3 from "../../../../asset/common/card3.svg";
@@ -17,27 +16,35 @@ import {
   CardTitle,
 } from "./HomeSideBarItem.style";
 import useModal from "@bamboo/ui/stories/Modal/hooks/useModal";
+import SignedWrite from "../../../Common/Write/SignedWrite/SignedWrite";
 
 const HomeSideBarItem = () => {
-  const { close, isOpened, open } = useModal();
+  const modal1 = useModal();
+  const modal2 = useModal();
+
   return (
     <>
       <Card size="sm" style={{ display: "flex", cursor: "pointer" }}>
-        <Image width={42} height={42} src={card1.src} alt="" />
-        <CardInfoBox onClick={open}>
+        <Image width={42} height={42} src={card1.src} alt="이미지 없음" />
+        <CardInfoBox onClick={modal1.open}>
           <CardTitle>익명 제보하기</CardTitle>
           <CardInfoText>로그인 없이 익명으로 제보합니다</CardInfoText>
         </CardInfoBox>
+        <Modal isOpened={modal1.isOpened} onClose={modal1.close}>
+          <Write close={modal1.close} />
+        </Modal>
       </Card>
-      <Modal isOpened={isOpened} onClose={close}>
-        <Write />
-      </Modal>
+
       <Card size="sm" style={{ display: "flex", cursor: "pointer" }}>
-        <CardInfoBox>
+        <CardInfoBox onClick={modal2.open}>
           <CardTitle>기명 제보하기</CardTitle>
           <CardInfoText>도담도담 계정으로 기명 제보합니다</CardInfoText>
         </CardInfoBox>
+        <Modal isOpened={modal2.isOpened} onClose={modal2.close}>
+          <SignedWrite close={modal2.close} />
+        </Modal>
       </Card>
+
       <Card size="sm" style={{ display: "flex" }}>
         <CardImg src={card3.src} />
         <CardInfoBox>
@@ -52,13 +59,11 @@ const HomeSideBarItem = () => {
         <Card4Box>
           <CardImg src={card4.src} />
           <div style={{ flexDirection: "column" }}>
-            <CardTitle style={{ marginLeft: "12px" }}>
-              이런 제보는 안 돼요
-            </CardTitle>
-            {DontDoThat.map((title) => (
+            <CardTitle>이런 제보는 안 돼요</CardTitle>
+            {DontDoThat.map((title, idx) => (
               <CardInfoText
                 style={{ marginLeft: "12px", marginTop: "4px" }}
-                key={`Dont do ${title}`}
+                key={idx}
               >
                 • {title.title}
               </CardInfoText>

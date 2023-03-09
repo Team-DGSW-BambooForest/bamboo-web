@@ -9,7 +9,8 @@ import { BambooThemeProvider } from "@bamboo/styled-theme";
 import Layout from "../components/Common/Layout/Layout";
 import Header from "../components/Common/Header/Header";
 import ProfileBar from "../components/Common/Profile/ProfileBar";
-import { GlobalStyles } from "../components/Common/Global/Style/GlobalStyle";
+import ScrollButton from "../components/Common/Button/ScrollButton";
+import { GlobalStyles } from "../components/Common/global/style/GlobalStyle";
 
 const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
   Component,
@@ -33,6 +34,7 @@ const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
                 <Component {...pageProps} />
               </Layout>
             </Hydrate>
+            <ScrollButton />
             <ReactQueryDevtools />
           </QueryClientProvider>
         </RecoilRoot>

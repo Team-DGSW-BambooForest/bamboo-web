@@ -87,3 +87,15 @@ export const WriteAddImageWrap = styled.div`
   column-gap: 8px;
   padding-right: 18px;
 `;
+
+export const WritePostForm = styled.form`
+  display: flex;
+  flex-direction: column;
+
+  row-gap: 12px;
+`;
+
+export const DisableInput = styled.input`
+  visibility: hidden;
+  position: absolute;
+`;
