@@ -1,12 +1,7 @@
-import { Search } from "@bamboo/ui";
+import Home from "../components/Home";
 
-export default function Web() {
-  return (
-    <div>
-      <Search
-        suggest={(str: string) => console.log("suggest" + str)}
-        request={(str: string) => console.log("request" + str)}
-      />
-    </div>
-  );
-}
+const Index = () => {
+  return <Home />;
+};
+
+export default Index;

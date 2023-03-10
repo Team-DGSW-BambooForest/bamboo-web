@@ -5,6 +5,10 @@ import { AppContext, AppInitialProps, AppProps } from "next/app";
 import { Hydrate } from "react-query/hydration";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { RecoilRoot } from "recoil";
+import Header from "../components/Common/Header";
+import Layout from "../components/Common/Layout";
+import ProfileBar from "../components/Common/ProfileBar";
+import { GlobalStyles } from "../components/Common/Styles/Global.style";
 
 const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
   Component,
@@ -20,12 +24,16 @@ const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
 
   return (
     <>
+      <GlobalStyles />
       <RecoilRoot>
         <QueryClientProvider client={queryClientRef.current}>
           <Hydrate state={pageProps.dehydratedState}>
-            <Component {...pageProps} />
+            <ProfileBar />
+            <Header />
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
           </Hydrate>
-          <ReactQueryDevtools />
         </QueryClientProvider>
       </RecoilRoot>
     </>
