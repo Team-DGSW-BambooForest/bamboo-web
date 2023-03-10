@@ -34,6 +34,4 @@ export const AdminText = styled.p`
   font-weight: 400;
   font-size: 18px;
   line-height: 26px;
-
-  letter-spacing: -0.0048em;
 `;

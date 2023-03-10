@@ -23,7 +23,6 @@ export const HoldItemUserBox = styled.div`
 `;
 
 export const HoldItemUsername = styled.p`
-  color: #2f2f2f;
   font-size: 16px;
 `;
 
@@ -34,5 +33,4 @@ export const HoldItemDate = styled.p`
 
 export const HoldItemContent = styled.p`
   font-size: 14px;
-  color: #2f2f2f;
 `;

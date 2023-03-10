@@ -30,7 +30,12 @@ const HomeHoldItem = ({ data }: Props) => {
     <>
       <Card
         size="lg"
-        style={{ display: "flex", flexDirection: "column", rowGap: "20px" }}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          rowGap: "20px",
+          color: "#2f2f2f;",
+        }}
       >
         <HoldItemTopWrap>
           <HoldItemProfileWrap>
