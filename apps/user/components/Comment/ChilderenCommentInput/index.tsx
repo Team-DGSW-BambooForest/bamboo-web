@@ -30,7 +30,7 @@ const ChilderenCommentInput = ({ parentCommentId, postId }: Props) => {
             <BiImageAlt />
           </S.DetailItemInputContainer>
           <S.DetailCommentInputText>
-            댓글을 게시하려면 ANG 키를 누르세요
+            댓글을 게시하려면 Enter 키를 누르세요
           </S.DetailCommentInputText>
         </S.DetailInputBox>
       </S.DetailCommentForm>
