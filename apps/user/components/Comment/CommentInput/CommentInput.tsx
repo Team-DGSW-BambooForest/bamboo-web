@@ -33,7 +33,6 @@ const CommentInput = ({ postId }: Props) => {
               placeholder="댓글을 입력하세요"
               value={content}
             />
-            <BiImageAlt />
           </HomeItemInputContainer>
           <HomeItemCommentInputText>
             댓글을 게시하려면 Enter 키를 누르세요

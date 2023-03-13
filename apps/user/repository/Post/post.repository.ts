@@ -2,7 +2,7 @@ import axios from "axios";
 import { PostDataType, PostResponse } from "../../types/Post/post.type";
 import { customAxios } from "../../util/axios";
 import { conf } from "../../util/config";
-import { postIdParam, writePostParam } from "./post.param";
+import { KeywordParam, postIdParam, writePostParam } from "./post.param";
 
 class PostRepository {
   public async createPost({
@@ -34,6 +34,11 @@ class PostRepository {
 
   public async getPostById({ id }: postIdParam): Promise<PostDataType> {
     const { data } = await customAxios.get(`/post/${id}`);
+    return data;
+  }
+
+  public async getPostByKeyword({ word }: KeywordParam): Promise<PostResponse> {
+    const { data } = await customAxios.get(`/post/search/${word}`);
     return data;
   }
 }

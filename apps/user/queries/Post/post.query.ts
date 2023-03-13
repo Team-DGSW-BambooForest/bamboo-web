@@ -1,6 +1,10 @@
 import { useMutation, useQuery, UseQueryOptions } from "react-query";
 import postRepository from "../../repository/Post/post.repository";
-import { postIdParam, writePostParam } from "../../repository/Post/post.param";
+import {
+  KeywordParam,
+  postIdParam,
+  writePostParam,
+} from "../../repository/Post/post.param";
 
 export const useGetPostsQuery = () =>
   useQuery("post/useGetPostsQuery", () => postRepository.getPosts(), {
@@ -30,4 +34,9 @@ export const useGetPostById = ({ id }: postIdParam) =>
       cacheTime: 1000 * 60 * 5,
       staleTime: 1000 * 60,
     }
+  );
+
+export const useGetPostByKeywrod = ({ word }: KeywordParam) =>
+  useQuery(["post/useGetPostByKeyword", word], () =>
+    postRepository.getPostByKeyword({ word })
   );

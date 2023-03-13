@@ -6,3 +6,7 @@ export interface writePostParam {
 export interface postIdParam {
   id: number;
 }
+
+export interface KeywordParam {
+  word: string;
+}
