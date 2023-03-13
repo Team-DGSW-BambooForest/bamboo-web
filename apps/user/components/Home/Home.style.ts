@@ -6,6 +6,6 @@ export const HomeContainer = styled.div`
 
 export const HomeMainContainer = styled.div`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background: #fbfcff;
 `;

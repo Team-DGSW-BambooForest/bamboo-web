@@ -15,11 +15,7 @@ import { MdOutlinePhotoCamera } from "react-icons/md";
 import { BiImageAlt } from "react-icons/bi";
 import { Avatar, Button, Card } from "@bamboo/ui";
 import useWritePost from "../../../hooks/Post/useWritePost";
-import anonymous from "../../../asset/anonymous.png";
-import { useRef, useState } from "react";
-import { ChangeEvent } from "react";
-import { useEffect } from "react";
-import { usePostFileQuery } from "../../../queries/File/file.query";
+import anonymous from "../../../asset/anonymous.svg";
 
 const Write = ({ close }: { close: () => void }) => {
   const {
