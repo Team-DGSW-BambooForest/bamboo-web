@@ -1,4 +1,5 @@
 import { useGetPostsQuery } from "../../queries/Post/post.query";
+import { HomeMainContainer } from "./Home.style";
 import HomeItem from "./HomeItem/HomeItem";
 import { HomeItemContainer } from "./HomeItem/HomeItem.style";
 import HomeSideBar from "./HomeSideBar/HomeSideBar";
@@ -8,14 +9,14 @@ const Home = () => {
 
   return (
     <>
-      <div style={{ width: "100%", minHeight: "100vh", background: "#FBFCFF" }}>
+      <HomeMainContainer>
         <HomeItemContainer>
           {PostData?.list.map((data) => (
             <HomeItem data={data} postId={data.postId} key={data.postId} />
           ))}
         </HomeItemContainer>
         <HomeSideBar />
-      </div>
+      </HomeMainContainer>
     </>
   );
 };
