@@ -3,13 +3,15 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
+      "env": ["SOME_ENV_VAR"],
+      "outputs": ["dist/**"]
     },
-    "lint": {
-      "outputs": []
-    },
-    "dev": {
-      "cache": false
+    "web#build": {
+      "dependsOn": ["^build"],
+      "env": ["SOME_OTHER_ENV_VAR"],
+      "outputs": [".next/**"]
     }
-  }
+  },
+  "globalEnv": ["GITHUB_TOKEN"],
+  "globalDependencies": ["tsconfig.json"]
 }
