@@ -22,9 +22,13 @@ const CommentInput = ({ postId }: Props) => {
   const { onChange, onSubmit, content } = useCommentPost({
     postId,
   });
+
+  const Profile =
+    "https://bamboodgsw.s3.ap-northeast-2.amazonaws.com/profile/anonymous_profile.png";
+
   return (
     <HomeItemCommentBox onClick={(e) => stopBubbling(e)}>
-      <Avatar size="sm" src={Haerin.src} alt="이미지 없음" />
+      <Avatar size="sm" src={Profile} alt="이미지 없음" />
       <HomeItemCommentForm onSubmit={onSubmit}>
         <HomeItemInputBox>
           <HomeItemInputContainer>
