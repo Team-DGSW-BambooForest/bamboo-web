@@ -21,7 +21,8 @@ import SignedWrite from "../../../Common/Write/SignedWrite/SignedWrite";
 const HomeSideBarItem = () => {
   const modal1 = useModal();
   const modal2 = useModal();
-
+  const img =
+    "https://bamboodgsw.s3.ap-northeast-2.amazonaws.com/icon/icon_bamboo.png";
   return (
     <>
       <Card size="sm" style={{ display: "flex", cursor: "pointer" }}>
@@ -36,6 +37,7 @@ const HomeSideBarItem = () => {
       </Card>
 
       <Card size="sm" style={{ display: "flex", cursor: "pointer" }}>
+        <Image src={img} height={42} width={42} alt="이미지 없음" />
         <CardInfoBox onClick={modal2.open}>
           <CardTitle>기명 제보하기</CardTitle>
           <CardInfoText>도담도담 계정으로 기명 제보합니다</CardInfoText>
