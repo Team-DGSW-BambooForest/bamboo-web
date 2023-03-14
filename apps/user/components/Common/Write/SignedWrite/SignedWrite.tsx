@@ -24,14 +24,16 @@ const SignedWrite = ({ close }: { close: () => void }) => {
 
   const { data } = useGetUserQuery();
 
-  const [tokenState, setTokenState] = useState<string | null>();
+  const [tokenState, setTokenState] = useState<string | null>(
+    getToken().accessToken
+  );
 
   useEffect(() => {
     setTokenState(getToken().accessToken);
-
     if (!tokenState) {
-      window.alert("로그인 후 제보할 수 있습니다.");
+      window.alert("로그인 후 제보 할 수 있습니다.");
       close();
+      return;
     }
   }, [tokenState]);
 

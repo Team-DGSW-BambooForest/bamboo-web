@@ -1,13 +1,13 @@
 import { Avatar } from "@bamboo/ui";
 import React, { useState } from "react";
-import { getComments } from "../../../types/Comment/comment.type";
+import { GetComments } from "../../../types/Comment/comment.type";
 import ChilderenComment from "../ChilderenComment/ChilderenComment";
 import ChilderenCommentInput from "../ChilderenCommentInput";
 import CommentInput from "../CommentInput/CommentInput";
 import * as S from "../HandleChildComment/HandleChildComment.style";
 
 interface Props {
-  data: getComments;
+  data: GetComments;
   postId: number;
 }
 

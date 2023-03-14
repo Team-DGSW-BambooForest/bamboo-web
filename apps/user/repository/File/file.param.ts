@@ -1,6 +1,6 @@
 export interface fileParam {
   postId: number;
-  file: File;
+  file?: File;
 }
 
 export interface getFileParam {

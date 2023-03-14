@@ -9,10 +9,9 @@ import {
 import Image from "next/image";
 import Logo from "../../../asset/logo/Logo.svg";
 import searchIcon from "../../../asset/icon/searchIcon.svg";
-import { clearToken } from "custom-util";
 import { useRouter } from "next/router";
 import { conf } from "custom-util/config";
-import { getToken } from "../../../util/localstorage";
+import { clearToken, getToken } from "../../../util/localstorage";
 
 const Header = () => {
   const router = useRouter();
@@ -51,7 +50,14 @@ const Header = () => {
         </HeaderSearchContainer>
       </HeaderLeftSection>
       {tokenState ? (
-        <HeaderLogoutText onClick={clearToken}>로그아웃</HeaderLogoutText>
+        <HeaderLogoutText
+          onClick={() => {
+            clearToken();
+            window.location.reload();
+          }}
+        >
+          로그아웃
+        </HeaderLogoutText>
       ) : (
         <HeaderLogoutText onClick={() => (window.location.href = authUrl)}>
           로그인

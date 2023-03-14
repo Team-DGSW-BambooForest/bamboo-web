@@ -10,15 +10,13 @@ const HomeSideBarFooter = () => {
   return (
     <HomeSideBarFooterBox>
       <HomeSideBarFooterLinkBox>
-        {FooterOp.map((list) => (
-          <>
-            <HomeSideBarFooterText
-              onClick={() => window.open(`${list.link}`)}
-              key={list.link}
-            >
-              {list.title}
-            </HomeSideBarFooterText>
-          </>
+        {FooterOp.map((list, idx) => (
+          <HomeSideBarFooterText
+            key={idx}
+            onClick={() => window.open(`${list.link}`)}
+          >
+            {list.title}
+          </HomeSideBarFooterText>
         ))}
       </HomeSideBarFooterLinkBox>
       <HomeSideFooterBottomText>

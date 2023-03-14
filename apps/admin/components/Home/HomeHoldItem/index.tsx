@@ -7,7 +7,8 @@ import {
   HoldItemUserBox,
   HoldItemUsername,
 } from "./style";
-import profile from "../../../../user/asset/common/profile.png";
+import AdminImage from "../../../asset/Anonymous.svg";
+
 import Image from "next/image";
 import { useGetHoldPost } from "../../../queries/post/post.query";
 import { dotDate } from "../../../util/day";
@@ -40,7 +41,7 @@ const HomeHoldItem = ({ data }: Props) => {
         <HoldItemTopWrap>
           <HoldItemProfileWrap>
             <Image
-              src={profile}
+              src={data.profileImage!!}
               width={48}
               height={48}
               alt="profile"

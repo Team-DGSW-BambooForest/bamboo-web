@@ -49,7 +49,12 @@ const HomeItemDetail = ({ data, postId }: Props) => {
         </S.TopWrap>
         <S.ItemContent>{data?.content}</S.ItemContent>
         {fileData && (
-          <Image src={fileData} width={532} height={529} alt="이미지 없음" />
+          <Image
+            src={String(fileData)}
+            width={532}
+            height={529}
+            alt="이미지 없음"
+          />
         )}
         <HomeItemHr />
         <DetailInput postId={Number(data?.postId)} />

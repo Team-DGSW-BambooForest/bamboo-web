@@ -1,6 +1,5 @@
 import { Avatar } from "@bamboo/ui";
 import React, { useState } from "react";
-import CommentInput from "../../Common/CommentInput/CommentInput";
 import * as S from "../HandleChildComment/HandleChildComment.style";
 
 interface Props {

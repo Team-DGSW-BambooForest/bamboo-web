@@ -4,8 +4,8 @@ import {
   AdminRole,
   AdminText,
 } from "./style";
-import AdminImage from "../../../../user/asset/common/profile.png";
 import Image from "next/image";
+import AdminImage from "../../../asset/Anonymous.svg";
 
 const ProfileBar = () => {
   return (

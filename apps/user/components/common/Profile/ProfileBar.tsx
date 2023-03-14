@@ -16,6 +16,7 @@ const ProfileBar = () => {
   const { close, isOpened, open } = useModal();
   const [tokenState, setTokenState] = useState<string | null>();
   const { data } = useGetUserQuery();
+
   useEffect(() => {
     setTokenState(getToken().accessToken);
   }, []);
@@ -27,7 +28,7 @@ const ProfileBar = () => {
           {tokenState ? (
             <>
               <Avatar size="lg" src={data?.profileImage!!} />
-              <UserRole>기명이</UserRole>
+              <UserRole>{data?.name}</UserRole>
               <UserRoleText>기명으로 제보를 할 수 있어요!</UserRoleText>
             </>
           ) : (

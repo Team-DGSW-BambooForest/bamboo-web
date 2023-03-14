@@ -1,7 +1,5 @@
-import { AxiosError } from "axios";
-import { useQuery, UseQueryOptions } from "react-query";
+import { useQuery } from "react-query";
 import authRepository from "../../repository/Auth/auth.repository";
-import { UserResponse } from "../../types/User/user.type";
 
 export const useGetUserQuery = () =>
   useQuery("user/useGetMemberQuery", () => authRepository.user(), {

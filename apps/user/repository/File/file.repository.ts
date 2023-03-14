@@ -6,7 +6,7 @@ import { fileParam } from "./file.param";
 class FileRepository {
   public async postFile({ postId, file }: fileParam): Promise<FileResponse> {
     const form = new FormData();
-    form.append("image", file);
+    form.append("image", file!!);
     const { data } = await customAxios.post(`/upload/${postId}`, form);
     return data;
   }

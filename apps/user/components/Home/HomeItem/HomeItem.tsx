@@ -65,14 +65,19 @@ const HomeItem = ({ data, postId }: Props) => {
           </HomeItemProfileContainer>
           <HomeItemContent>{data.content}</HomeItemContent>
           {fileData && (
-            <Image src={fileData} width={100} height={100} alt="이미지 없음" />
+            <Image
+              src={String(fileData)}
+              width={100}
+              height={100}
+              alt="이미지 없음"
+            />
           )}
           <HomeItemHr />
         </HomeItemTopWrap>
         <HomeItemBottomWrap>
           <CommentInput postId={data.postId} />
-          {handleCommentData?.map((item) => (
-            <HandleChildComment item={item} postId={data.postId} />
+          {handleCommentData?.map((item, idx) => (
+            <HandleChildComment key={idx} item={item} postId={data.postId} />
           ))}
         </HomeItemBottomWrap>
         {ChildCommentData?.length!! > 2 ? (

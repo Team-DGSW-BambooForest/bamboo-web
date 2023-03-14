@@ -7,8 +7,8 @@ import { dotDate } from "../../../../util/date";
 import * as S from "../HomeItem.style";
 import { PostDataType } from "../../../../types/Post/post.type";
 import Image from "next/image";
-import CommentInput from "../../../Common/CommentInput/CommentInput";
 import HandleChildComment from "../../../Comment/HandleChildComment/HandleChildComment";
+import CommentInput from "../../../Comment/CommentInput/CommentInput";
 
 interface Props {
   data: PostDataType;
@@ -45,7 +45,12 @@ const HomeSearchItem = ({ data }: Props) => {
         </S.HomeItemProfileContainer>
         <S.HomeItemContent>{data.content}</S.HomeItemContent>
         {fileData && (
-          <Image src={fileData} width={100} height={100} alt="이미지 없음" />
+          <Image
+            src={String(fileData)}
+            width={100}
+            height={100}
+            alt="이미지 없음"
+          />
         )}
         <S.HomeItemHr />
       </S.HomeItemTopWrap>
