@@ -1,4 +1,8 @@
-import axios, { AxiosRequestConfig, AxiosError } from "axios";
+import axios, {
+  AxiosRequestConfig,
+  AxiosError,
+  InternalAxiosRequestConfig,
+} from "axios";
 import { conf } from "./config";
 import { clearToken, getToken, setToken } from "./localstorage";
 import router from "next/router";
@@ -9,7 +13,7 @@ export const customAxios = axios.create({
 });
 
 customAxios.interceptors.request.use(
-  async function (config: AxiosRequestConfig<any>) {
+  async function (config: any) {
     const accessToken = getToken().accessToken;
     accessToken &&
       (config.headers = {

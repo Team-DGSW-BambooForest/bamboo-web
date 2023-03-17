@@ -10,13 +10,15 @@ import Layout from "../components/Common/Layout/Layout";
 import Header from "../components/Common/Header/Header";
 import ProfileBar from "../components/Common/Profile/ProfileBar";
 import ScrollButton from "../components/Common/Button/ScrollButton";
-import { GlobalStyles } from "../components/Common/global/style/GlobalStyle";
+import GlobalStyle from "../styles/GlobalStyle";
+import GlobalStyles from "../styles/GlobalStyle1";
 
 const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
   Component,
   pageProps,
 }: any) => {
   const queryClientRef = React.useRef<QueryClient>();
+
   if (!queryClientRef.current) {
     queryClientRef.current = new QueryClient();
   }
