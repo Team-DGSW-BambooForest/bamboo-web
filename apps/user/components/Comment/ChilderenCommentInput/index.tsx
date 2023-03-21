@@ -1,7 +1,6 @@
 import { Avatar } from "@bamboo/ui";
 import React from "react";
 import { BiImageAlt } from "react-icons/bi";
-import Haerin from "../../../asset/haerin.jpeg";
 import { stopBubbling } from "custom-util";
 import * as S from "./style";
 import useChildCommentPost from "../../../hooks/Post/useDetailComment";
@@ -16,9 +15,12 @@ const ChilderenCommentInput = ({ parentCommentId, postId }: Props) => {
     postId,
     parentCommentId,
   });
+
+  const Profile =
+    "https://bamboodgsw.s3.ap-northeast-2.amazonaws.com/profile/anonymous_profile.png";
   return (
     <S.DetailCommentBox onClick={(e) => stopBubbling(e)}>
-      <Avatar size="sm" src={Haerin.src} alt="이미지 없음" />
+      <Avatar size="sm" src={Profile} alt="이미지 없음" />
       <S.DetailCommentForm onSubmit={onSubmit}>
         <S.DetailInputBox>
           <S.DetailItemInputContainer>

@@ -10,7 +10,6 @@ import Layout from "../components/Common/Layout/Layout";
 import Header from "../components/Common/Header/Header";
 import ProfileBar from "../components/Common/Profile/ProfileBar";
 import ScrollButton from "../components/Common/Button/ScrollButton";
-import GlobalStyle from "../styles/GlobalStyle";
 import GlobalStyles from "../styles/GlobalStyle1";
 
 const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({

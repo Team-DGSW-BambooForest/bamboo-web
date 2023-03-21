@@ -9,7 +9,6 @@ import {
   HomeItemInputBox,
   HomeItemInputContainer,
 } from "../CommentInput/CommentInput.style";
-import Haerin from "../../../asset/haerin.jpeg";
 import useCommentPost from "../../../hooks/Post/useCommentPost";
 import { stopBubbling } from "custom-util";
 import useChildCommentPost from "../../../hooks/Post/useDetailComment";
@@ -18,13 +17,16 @@ interface Props {
   postId: number;
 }
 
+const Profile =
+  "https://bamboodgsw.s3.ap-northeast-2.amazonaws.com/profile/anonymous_profile.png";
+
 const DetailInput = ({ postId }: Props) => {
   const { onChange, onSubmit, content } = useChildCommentPost({
     postId,
   });
   return (
     <HomeItemCommentBox onClick={(e) => stopBubbling(e)}>
-      <Avatar size="sm" src={Haerin.src} alt="이미지 없음" />
+      <Avatar size="sm" src={Profile} alt="이미지 없음" />
       <HomeItemCommentForm onSubmit={onSubmit}>
         <HomeItemInputBox>
           <HomeItemInputContainer>

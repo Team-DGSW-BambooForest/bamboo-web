@@ -1,5 +1,7 @@
+import axios from "axios";
 import { customAxios } from "custom-util";
 import { CommentType, GetComments } from "../../types/Comment/comment.type";
+import { conf } from "../../util/config";
 import {
   createCommentParam,
   getCommentByIdParam,
@@ -7,7 +9,7 @@ import {
 } from "./comment.param";
 
 class CommentRepository {
-  public async createComment({
+  public async signedCreateComment({
     postId,
     parentCommentId,
     content,
@@ -19,6 +21,17 @@ class CommentRepository {
     });
   }
 
+  public async createComment({
+    postId,
+    parentCommentId,
+    content,
+  }: createCommentParam): Promise<void> {
+    await axios.post(`${conf.baseUrl}/comment/create`, {
+      postId,
+      parentCommentId,
+      content,
+    });
+  }
   public async getCommentById({
     postId,
   }: getCommentByIdParam): Promise<CommentType[]> {

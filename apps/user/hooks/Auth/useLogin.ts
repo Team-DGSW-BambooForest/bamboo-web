@@ -14,7 +14,6 @@ const useLogin = () => {
         code: query.code as string,
       });
       setToken(token, refreshToken);
-      window.location.reload();
       router.push("/");
     } catch (error) {
       console.log(error);

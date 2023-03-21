@@ -1,9 +1,9 @@
-import { conf } from "custom-util/config";
 import { LoginParam } from "./auth.param";
-import { LoginResponse } from "./auth.response";
 import axios from "axios";
 import { customAxios } from "../../util/axios";
 import { UserResponse } from "../../types/User/user.type";
+import { LoginResponse } from "../../types/\bAuth/auth.type";
+import { conf } from "../../util/config";
 
 class AuthRepository {
   public async login({ code }: LoginParam): Promise<LoginResponse> {

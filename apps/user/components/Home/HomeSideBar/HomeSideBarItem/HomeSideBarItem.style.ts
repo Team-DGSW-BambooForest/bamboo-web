@@ -29,4 +29,5 @@ export const CardInfoText = styled.p`
 
 export const Card4Box = styled.div`
   display: flex;
+  column-gap: 10px;
 `;

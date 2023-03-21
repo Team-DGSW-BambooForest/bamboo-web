@@ -36,6 +36,18 @@ export const useCreateCommentQuery = () => {
   return mutation;
 };
 
+export const useSignedCreateCommentQuery = () => {
+  const mutation = useMutation(
+    ({ postId, parentCommentId, content }: createCommentParam) =>
+      commentRepository.signedCreateComment({
+        postId,
+        parentCommentId,
+        content,
+      })
+  );
+  return mutation;
+};
+
 export const useGetCommentsQuery = ({ postId }: getCommentByIdParam) =>
   useQuery(
     ["comment/useGetComments", postId],
