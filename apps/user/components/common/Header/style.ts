@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const HeaderStyle = styled.div`
+export const HeaderContainer = styled.form`
   /* position */
   position: fixed;
   top: 0;
