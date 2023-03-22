@@ -4,7 +4,7 @@ import ikmyung from "../../../asset/ikmyung.svg";
 import haerin from "../../../asset/haerin.jpeg";
 import { AiOutlineClose } from "react-icons/ai";
 import { SelectRoleText } from "./SelectRole.style";
-import { WriteTopText, WriteTopWrap, WirteTopLine } from "../Write/write.style";
+import { WriteTopText, WriteTopWrap, WirteTopLine } from "../Write/Write.style";
 
 const SelectRole = () => {
   return (
