@@ -8,7 +8,7 @@ import {
   WriteTopWrap,
   WriteUserInfoWrap,
   WriteUserName,
-} from "../Write.style";
+} from "../write.style";
 import { AiOutlineClose } from "react-icons/ai";
 import { MdOutlinePhotoCamera } from "react-icons/md";
 import { BiImageAlt } from "react-icons/bi";

@@ -9,7 +9,7 @@ export const customAxios = axios.create({
 });
 
 customAxios.interceptors.request.use(
-  async function (config: AxiosRequestConfig<any>) {
+  async function (config: any) {
     const accessToken = getToken().accessToken;
     accessToken &&
       (config.headers = {

@@ -2,9 +2,9 @@ import { Card, Select } from "@bamboo/ui";
 import React from "react";
 import ikmyung from "../../../asset/ikmyung.svg";
 import haerin from "../../../asset/haerin.jpeg";
-import { WriteTopText, WriteTopWrap, WirteTopLine } from "../Write/Write.style";
 import { AiOutlineClose } from "react-icons/ai";
 import { SelectRoleText } from "./SelectRole.style";
+import { WriteTopText, WriteTopWrap, WirteTopLine } from "../Write/write.style";
 
 const SelectRole = () => {
   return (

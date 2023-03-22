@@ -2,7 +2,7 @@ import React from "react";
 import { CSSProperties } from "styled-components";
 
 export interface ChangeActionType {
-  changeAction?: (e: HTMLInputElement) => void;
+  changeAction?: (e: any) => void;
 }
 
 export type itemType = {

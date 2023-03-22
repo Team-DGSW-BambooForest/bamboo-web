@@ -15,7 +15,7 @@ const View = () => {
     <>
       <MainDetailContainer>
         <DetailContainer>
-          <HomeItemDetail data={data} postId={Number(query.id)} />
+          <HomeItemDetail data={data!!} postId={Number(query.id)} />
         </DetailContainer>
         <HomeSideBar />
       </MainDetailContainer>

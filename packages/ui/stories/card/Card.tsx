@@ -15,7 +15,7 @@ export const Card = ({ children, size = "lg", style, onClick }: CardProps) => {
   return (
     <CardContainer
       size={size}
-      onClick={(event: React.ChangeEvent<HTMLDivElement>) => {
+      onClick={(event: React.ChangeEvent<any>) => {
         stopBubbling(event);
         if (onClick !== undefined) onClick();
       }}

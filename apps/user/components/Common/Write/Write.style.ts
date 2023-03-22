@@ -99,3 +99,6 @@ export const DisableInput = styled.input`
   visibility: hidden;
   position: absolute;
 `;
+
+const k = 3;
+export default k;

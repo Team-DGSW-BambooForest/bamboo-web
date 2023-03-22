@@ -2,6 +2,7 @@ import React, { useCallback, useState } from "react";
 import { MenuItemProps, MenuProps } from "./menu.interface";
 import { MenuToggleButton, MenuList, MenuItemStyle } from "./menu.style";
 import menuImg from "../assets/menu.png";
+import Image from "next/image";
 
 export const Menu = ({ children }: MenuProps) => {
   const [toggle, setToggle] = useState(false);
@@ -11,7 +12,7 @@ export const Menu = ({ children }: MenuProps) => {
   return (
     <>
       <MenuToggleButton onClick={changeToggle}>
-        <img src={menuImg} alt="menu" />
+        <Image src={menuImg} alt="menu" />
         {toggle && <MenuList>{children}</MenuList>}
       </MenuToggleButton>
     </>

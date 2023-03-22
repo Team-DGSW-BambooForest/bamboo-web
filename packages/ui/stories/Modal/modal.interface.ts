@@ -6,5 +6,5 @@ import React, { Dispatch, MouseEventHandler, SetStateAction } from "react";
  */
 export interface ModalProps {
   isOpened: boolean;
-  onClose: MouseEventHandler<Dispatch<SetStateAction<boolean>>>;
+  onClose: MouseEventHandler<any>;
 }
