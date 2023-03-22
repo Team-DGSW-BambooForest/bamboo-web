@@ -14,7 +14,7 @@ const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
   Component,
   pageProps,
 }: {
-  Component: NextComponentType<NextPageContext, any, any>;
+  Component: any;
   pageProps: any;
 }) => {
   const queryClientRef = React.useRef<QueryClient>();
