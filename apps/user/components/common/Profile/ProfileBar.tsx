@@ -9,7 +9,7 @@ import {
   ProfileContainer,
   UserRole,
   UserRoleText,
-} from "./Profile.style";
+} from "../../common/Profile/Profile.style";
 
 const ProfileBar = () => {
   const { close, isOpened, open } = useModal();
