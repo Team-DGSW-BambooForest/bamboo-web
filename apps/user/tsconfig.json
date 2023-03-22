@@ -1,5 +1,8 @@
 {
   "extends": "tsconfig/nextjs.json",
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.*.ts"],
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": false
+  }
   "exclude": ["node_modules"]
 }
