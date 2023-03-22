@@ -1080,11 +1080,11 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     "to-fast-properties" "^2.0.0"
 
-"@bamboo/styled-theme@*", "@bamboo/styled-theme@file:/Users/seonghun/공부/팀프로젝트/bamboo/packages/ui-theme":
+"@bamboo/styled-theme@*":
   "resolved" "file:packages/ui-theme"
   "version" "1.0.0"
 
-"@bamboo/ui-mode@*", "@bamboo/ui-mode@file:/Users/seonghun/공부/팀프로젝트/bamboo/packages/ui-mode":
+"@bamboo/ui-mode@*":
   "resolved" "file:packages/ui-mode"
   "version" "1.0.0"
 
@@ -5395,11 +5395,11 @@
   dependencies:
     "array-find-index" "^1.0.1"
 
-"custom-hooks@*", "custom-hooks@file:/Users/seonghun/공부/팀프로젝트/bamboo/packages/hooks":
+"custom-hooks@*":
   "resolved" "file:packages/hooks"
   "version" "1.0.0"
 
-"custom-util@*", "custom-util@file:/Users/seonghun/공부/팀프로젝트/bamboo/packages/util":
+"custom-util@*":
   "resolved" "file:packages/util"
   "version" "1.0.0"
   dependencies:
@@ -6093,7 +6093,7 @@
   optionalDependencies:
     "source-map" "~0.6.1"
 
-"eslint-config-custom@*", "eslint-config-custom@file:/Users/seonghun/공부/팀프로젝트/bamboo/packages/eslint-config-custom":
+"eslint-config-custom@*":
   "resolved" "file:packages/eslint-config-custom"
   "version" "0.0.0"
   dependencies:
@@ -12605,7 +12605,7 @@
     "minimist" "^1.2.6"
     "strip-bom" "^3.0.0"
 
-"tsconfig@*", "tsconfig@file:/Users/seonghun/공부/팀프로젝트/bamboo/packages/tsconfig":
+"tsconfig@*":
   "resolved" "file:packages/tsconfig"
   "version" "0.0.0"
 
