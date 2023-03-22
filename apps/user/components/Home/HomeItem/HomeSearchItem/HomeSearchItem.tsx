@@ -5,7 +5,7 @@ import { useGetCommentByIdQuery } from "../../../../queries/Comment/Comment.quer
 import { useGetFileQuery } from "../../../../queries/File/file.query";
 import { dotDate } from "../../../../util/date";
 import * as S from "../HomeItem.style";
-import { PostDataType } from "../../../../types/Post/post.type";
+import { PostDataType } from "../../../../types/Post/Post.type";
 import Image from "next/image";
 import HandleChildComment from "../../../Comment/HandleChildComment/HandleChildComment";
 import CommentInput from "../../../Comment/CommentInput/CommentInput";
