@@ -1,9 +1,8 @@
 import { Avatar, Modal } from "@bamboo/ui";
 import useModal from "@bamboo/ui/stories/Modal/hooks/useModal";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useGetUserQuery } from "../../../queries/User/user.query";
 import { getToken } from "../../../util/localstorage";
-import SelectRole from "../Select/SelectRole";
 import Anonymous from "../../../asset/anonymous.svg";
 import {
   ProfileBarContainer,
