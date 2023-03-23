@@ -22,7 +22,9 @@ const Header = () => {
   useEffect(() => {
     setTokenState(getToken().accessToken);
   }, [tokenState]);
+
   const { keyword, onChangeKeyword, onSearchKeyword } = useSearchPost();
+
   return (
     <HeaderContainer onSubmit={onSearchKeyword}>
       <HeaderLeftSection>
