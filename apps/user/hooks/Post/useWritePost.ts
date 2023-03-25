@@ -49,7 +49,7 @@ const useWritePost = (close: () => void) => {
     writePostMutation.mutate(
       { content, hashtags },
       {
-        onSuccess: (res) => {
+        onSuccess: (res: any) => {
           window.alert("게시물 등록 성공");
           setPostData({
             content: "",
@@ -74,7 +74,7 @@ const useWritePost = (close: () => void) => {
     signedWritePostMutation.mutate(
       { content, hashtags },
       {
-        onSuccess: (res) => {
+        onSuccess: (res: any) => {
           window.alert("게시물 등록 성공");
           setPostData({
             content: "",
