@@ -1,5 +1,5 @@
 import axios from "axios";
-import { PostDataType, PostResponse } from "../../types/Post/post.type";
+import { PostDataType, PostResponse } from "../../types/Post/Post.type";
 import { customAxios } from "../../util/axios";
 import { conf } from "../../util/config";
 import { KeywordParam, postIdParam, writePostParam } from "./post.param";
