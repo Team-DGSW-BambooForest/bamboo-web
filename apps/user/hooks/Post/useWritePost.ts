@@ -50,15 +50,16 @@ const useWritePost = (close: () => void) => {
       { content, hashtags },
       {
         onSuccess: (res: any) => {
-          window.alert("게시물 등록 성공");
+          window.alert("게시물 요청 성공");
           setPostData({
             content: "",
             hashtags: [],
           });
           setPostId(res!!);
+          close();
         },
         onError: () => {
-          window.alert("게시물 등록 실패");
+          window.alert("게시물 요청 실패");
         },
       }
     );
@@ -75,15 +76,16 @@ const useWritePost = (close: () => void) => {
       { content, hashtags },
       {
         onSuccess: (res: any) => {
-          window.alert("게시물 등록 성공");
+          window.alert("게시물 요청 성공");
           setPostData({
             content: "",
             hashtags: [],
           });
           setPostId(res!!);
+          close();
         },
         onError: () => {
-          window.alert("게시물 등록 실패");
+          window.alert("게시물 요청 실패");
         },
       }
     );

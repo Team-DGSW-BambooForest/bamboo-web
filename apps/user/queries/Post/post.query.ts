@@ -7,10 +7,9 @@ import {
 } from "../../repository/Post/post.param";
 
 export const useGetPostsQuery = () =>
-  useQuery("post/useGetPostsQuery", () => postRepository.getPosts(), {
-    cacheTime: 1000 * 60 * 5,
-    staleTime: 1000 * 60,
-  });
+  useMutation("post/useGetPostsQuery", (page: number) =>
+    postRepository.getPosts(page)
+  );
 
 export const useWrtiePostQuery = () => {
   const mutation = useMutation(({ content, hashtags }: writePostParam) =>
