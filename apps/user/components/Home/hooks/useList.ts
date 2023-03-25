@@ -14,9 +14,10 @@ const useList = () => {
     setIsLoaded(true);
     await new Promise((resolve) => setTimeout(resolve, 800));
 
-    mutate(pageRef.current++, {
+    mutate(pageRef.current, {
       onSuccess: (res: PostResponse) => {
         setItemLists((prev) => [...prev, ...res.list]);
+        pageRef.current++;
       },
     });
     setIsLoaded(false);
