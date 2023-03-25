@@ -2,7 +2,7 @@ import styled from "styled-components";
 import background from "../../../asset/background/background.svg";
 
 export const ProfileBarContainer = styled.div`
-  width: 360px;
+  width: 19%;
   height: calc(100vh - 80px);
   position: fixed;
   top: 80px;

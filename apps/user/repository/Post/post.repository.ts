@@ -28,7 +28,7 @@ class PostRepository {
   }
 
   public async getPosts(): Promise<PostResponse> {
-    const { data } = await customAxios.get("/post/list");
+    const { data } = await customAxios.get(`/post/list?page=${1}`);
     return data;
   }
 

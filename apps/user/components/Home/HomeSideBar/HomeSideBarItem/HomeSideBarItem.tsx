@@ -17,6 +17,7 @@ import {
 } from "./HomeSideBarItem.style";
 import useModal from "@bamboo/ui/stories/Modal/hooks/useModal";
 import SignedWrite from "../../../Common/Write/SignedWrite/SignedWrite";
+import { stopBubbling } from "custom-util";
 
 const HomeSideBarItem = () => {
   const modal1 = useModal();
@@ -25,13 +26,23 @@ const HomeSideBarItem = () => {
     "https://bamboodgsw.s3.ap-northeast-2.amazonaws.com/icon/icon_bamboo.png";
   return (
     <>
-      <Card size="sm" style={{ display: "flex", cursor: "pointer" }}>
+      <Card
+        size="sm"
+        style={{ display: "flex", cursor: "pointer" }}
+        onClick={modal1.open}
+      >
         <Image width={42} height={42} src={card1.src} alt="이미지 없음" />
-        <CardInfoBox onClick={modal1.open}>
+        <CardInfoBox>
           <CardTitle>익명 제보하기</CardTitle>
           <CardInfoText>로그인 없이 익명으로 제보합니다</CardInfoText>
         </CardInfoBox>
-        <Modal isOpened={modal1.isOpened} onClose={modal1.close}>
+        <Modal
+          isOpened={modal1.isOpened}
+          onClose={(e: any) => {
+            stopBubbling(e);
+            modal1.close();
+          }}
+        >
           <Write close={modal1.close} />
         </Modal>
       </Card>

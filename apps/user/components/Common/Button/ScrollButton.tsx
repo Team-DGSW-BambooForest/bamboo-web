@@ -18,7 +18,7 @@ export default ScrollButton;
 export const ScrollButtonContainer = styled.button`
   position: fixed;
   bottom: 68px;
-  right: 574px;
+  right: 25%;
 
   width: 56px;
   height: 56px;

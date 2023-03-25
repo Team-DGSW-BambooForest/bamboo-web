@@ -9,7 +9,7 @@ export const HomeSideBarContainer = styled.div`
 
   position: fixed;
   top: 120px;
-  right: 350px;
+  right: 13%;
 
   gap: 18px;
 `;

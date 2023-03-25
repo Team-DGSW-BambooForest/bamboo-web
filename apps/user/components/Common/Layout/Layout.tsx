@@ -8,7 +8,7 @@ const Layout = ({ children }: OnlyChildrenProps) => {
 
 const LayoutStyle = styled.div`
   padding-top: 80px;
-  padding-left: 360px;
+  padding-left: 19%;
 `;
 
 export default Layout;

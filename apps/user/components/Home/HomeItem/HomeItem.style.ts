@@ -50,7 +50,7 @@ export const HomeItemContainer = styled.div`
   flex-direction: column;
   padding-top: 40px;
   row-gap: 28px;
-  margin-left: 310px;
+  margin-left: 15%;
 
   z-index: -100;
 `;
