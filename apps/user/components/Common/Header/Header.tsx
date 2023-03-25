@@ -16,7 +16,7 @@ import useSearchPost from "../../../hooks/Post/useSearchPost";
 
 const Header = () => {
   const router = useRouter();
-  const authUrl = `https://dauth.b1nd.com/login?client_id=${conf.clientId}&redirect_uri=http://localhost:3001/callback`;
+  const authUrl = `https://dauth.b1nd.com/login?client_id=${conf.clientId}&redirect_uri=https://bamboo-frontend-user.vercel.app//callback`;
   const [tokenState, setTokenState] = useState<string | null>();
 
   useEffect(() => {
