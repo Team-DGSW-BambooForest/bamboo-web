@@ -1,8 +1,10 @@
 import { ChangeEvent } from "react";
 import { FormEvent } from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import { useQueryClient } from "react-query";
 import { useCreateCommentQuery } from "../../queries/Comment/Comment.query";
+import { getToken } from "../../util/localstorage";
 
 interface Props {
   postId: number;
@@ -20,26 +22,59 @@ const useChildCommentPost = ({ postId, parentCommentId }: Props) => {
     setContent(e.target.value);
   };
 
+  const [tokenState, setTokenState] = useState<string | null>(
+    getToken().accessToken
+  );
+
+  useEffect(() => {
+    setTokenState(getToken().accessToken);
+  }, [tokenState]);
+
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (parentCommentId) {
-      createCommentMutation.mutateAsync(
-        {
-          content,
-          postId,
-          parentCommentId,
-        },
-        {
-          onSuccess: () => {
-            window.alert("대댓글 성공");
-            setContent("");
-            queryClient.invalidateQueries(["comment/useGetComments", postId]);
+    if (tokenState) {
+      if (parentCommentId) {
+        createCommentMutation.mutateAsync(
+          {
+            content,
+            postId,
+            parentCommentId,
           },
-          onError: () => {
-            window.alert("댓글 등록 실패");
-          },
+          {
+            onSuccess: () => {
+              window.alert("대댓글 성공");
+              setContent("");
+              queryClient.invalidateQueries(["comment/useGetComments", postId]);
+            },
+            onError: () => {
+              window.alert("댓글 등록 실패");
+            },
+          }
+        );
+      } else {
+        if (parentCommentId) {
+          createCommentMutation.mutateAsync(
+            {
+              content,
+              postId,
+              parentCommentId,
+            },
+            {
+              onSuccess: () => {
+                window.alert("대댓글 성공");
+                setContent("");
+                queryClient.invalidateQueries([
+                  "comment/useGetComments",
+                  postId,
+                ]);
+              },
+              onError: () => {
+                window.alert("댓글 등록 실패");
+              },
+            }
+          );
         }
-      );
+      }
     } else {
       createCommentMutation.mutateAsync(
         {
