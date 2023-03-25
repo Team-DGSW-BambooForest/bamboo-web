@@ -4,6 +4,10 @@ import { SizeType } from "../../interface/size.type";
 export const CardContainer = styled.div<{
   size: SizeType;
 }>`
+  @media screen and (max-width: 1600px) {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
   padding-top: 18px;
   padding-bottom: 18px;
   background: #ffffff;
@@ -13,6 +17,12 @@ export const CardContainer = styled.div<{
 
 const sizeStyle: Record<SizeType, FlattenSimpleInterpolation> = {
   lg: css`
+    @media screen and (max-width: 1600px) {
+      width: 540px;
+
+      padding-left: 18px;
+      padding-right: 18px;
+    }
     width: 580px;
     border-radius: 15px;
     padding-left: 24px;
@@ -25,6 +35,9 @@ const sizeStyle: Record<SizeType, FlattenSimpleInterpolation> = {
     padding-right: 18px;
   `,
   sm: css`
+    @media screen and (max-width: 1600px) {
+      width: 260px;
+    }
     width: 280px;
     border-radius: 15px;
     padding-left: 24px;

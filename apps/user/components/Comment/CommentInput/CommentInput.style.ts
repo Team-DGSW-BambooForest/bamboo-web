@@ -10,6 +10,9 @@ export const HomeItemCommentBox = styled.div`
 `;
 
 export const HomeItemInputContainer = styled.div`
+  @media screen and (max-width: 1600px) {
+    width: 450px;
+  }
   width: 490px;
   height: 34px;
 

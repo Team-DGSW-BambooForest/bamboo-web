@@ -12,6 +12,9 @@ export const CardInfoBox = styled.div`
 `;
 
 export const CardTitle = styled.p`
+  @media screen and (max-width: 1600px) {
+    font-size: 12px;
+  }
   font-weight: 500;
   font-size: 16px;
   line-height: 23px;
@@ -21,6 +24,10 @@ export const CardTitle = styled.p`
 `;
 
 export const CardInfoText = styled.p`
+  @media screen and (max-width: 1600px) {
+    font-size: 8px;
+    line-height: 12px;
+  }
   font-weight: 400;
   font-size: 12px;
   line-height: 17px;

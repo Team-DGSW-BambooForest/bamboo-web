@@ -31,4 +31,7 @@ export const ScrollButtonContainer = styled.button`
     background: linear-gradient(180deg, #49e7ba 0%, #37dc81 100%);
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   }
+  @media screen and (max-width: 1600px) {
+    bottom: 30px;
+  }
 `;

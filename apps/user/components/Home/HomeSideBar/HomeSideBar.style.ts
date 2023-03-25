@@ -12,4 +12,8 @@ export const HomeSideBarContainer = styled.div`
   right: 13%;
 
   gap: 18px;
+
+  @media screen and (max-width: 1600px) {
+    right: 8%;
+  }
 `;

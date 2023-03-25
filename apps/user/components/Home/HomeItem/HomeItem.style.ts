@@ -39,6 +39,9 @@ export const HomeItemContent = styled.p`
 `;
 
 export const HomeItemHr = styled.hr`
+  @media screen and (max-width: 1600px) {
+    width: 500px;
+  }
   width: 532px;
   background: #f2f2f2;
 
