@@ -25,6 +25,7 @@ const Write = ({ close }: { close: () => void }) => {
     changeFile,
     fileRef,
     inputClick,
+    file,
   } = useWritePost(close);
 
   return (
@@ -48,7 +49,7 @@ const Write = ({ close }: { close: () => void }) => {
         placeholder="대대숲에 제보를 남겨보세요"
       />
       <WriteImageWrap>
-        <WriteAddText>게시물에 추가</WriteAddText>
+        <WriteAddText>{file ? file[0].name : "게시물에 추가"}</WriteAddText>
         <WriteAddImageWrap>
           <MdOutlinePhotoCamera />
           <BiImageAlt onClick={inputClick} />

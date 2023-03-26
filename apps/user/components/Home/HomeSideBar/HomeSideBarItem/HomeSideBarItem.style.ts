@@ -15,7 +15,7 @@ export const CardTitle = styled.p`
   @media screen and (max-width: 1600px) {
     font-size: 12px;
   }
-  font-weight: 500;
+  font-weight: 700;
   font-size: 16px;
   line-height: 23px;
   letter-spacing: -0.0048em;

@@ -118,6 +118,7 @@ const useWritePost = (close: () => void) => {
     fileRef,
     inputClick,
     signedOnSubmitPostData,
+    file,
   };
 };
 

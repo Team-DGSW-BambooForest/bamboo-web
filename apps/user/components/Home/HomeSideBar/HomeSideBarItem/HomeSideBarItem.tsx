@@ -82,9 +82,8 @@ const HomeSideBarItem = () => {
               </CardInfoText>
             ))}
             <CardInfoText style={{ marginTop: "24px" }}>
-              (이외에도 관리자가 부적절하다고 판<br />
-              단한 제보와 댓글은 경고 처리 없이
-              <br /> 삭제 조치 될 수 있습니다.)
+              (이외에도 관리자가 부적절하다고 판 단한 제보와 댓글은 경고 처리
+              없이 삭제 조치 될 수 있습니다.)
             </CardInfoText>
           </div>
         </Card4Box>

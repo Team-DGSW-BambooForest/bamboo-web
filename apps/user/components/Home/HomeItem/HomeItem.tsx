@@ -85,7 +85,11 @@ const HomeItem = ({ data, postId }: Props) => {
           <CommentCount onClick={() => router.push(`/view/${postId}`)}>
             댓글 {ChildCommentData?.length!! - 2}개 더보기
           </CommentCount>
-        ) : null}
+        ) : (
+          <CommentCount onClick={() => router.push(`/view/${postId}`)}>
+            자세히 보기
+          </CommentCount>
+        )}
       </Card>
     </>
   );
