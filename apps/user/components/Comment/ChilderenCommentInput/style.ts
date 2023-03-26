@@ -10,6 +10,9 @@ export const DetailCommentBox = styled.div`
 `;
 
 export const DetailItemInputContainer = styled.div`
+  @media screen and (max-width: 1600px) {
+    width: 420px;
+  }
   width: 460px;
   height: 34px;
 
