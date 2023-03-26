@@ -36,6 +36,7 @@ const AllComments = ({ data, postId }: Props) => {
         <ChilderenCommentInput
           parentCommentId={data.comment.id}
           postId={postId}
+          setInputModal={setInputModal}
         />
       )}
       {data.reply.map((data) => (

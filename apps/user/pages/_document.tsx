@@ -36,7 +36,13 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head></Head>
+        <Head>
+          <link
+            rel="shortcut icon"
+            href="https://raw.githubusercontent.com/Team-DGSW-BambooForest/Bamboo_Frontend/63c87388ae1ec7a62d3f9a6a383a73e2d1cf0ea5/apps/user/asset/logo/Logo.svg"
+          />
+          <title>대나무숲</title>
+        </Head>
         <body>
           <Main />
           <NextScript />

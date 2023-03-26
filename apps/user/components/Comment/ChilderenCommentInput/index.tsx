@@ -8,12 +8,18 @@ import useChildCommentPost from "../../../hooks/Post/useDetailComment";
 interface Props {
   parentCommentId: number;
   postId: number;
+  setInputModal: any;
 }
 
-const ChilderenCommentInput = ({ parentCommentId, postId }: Props) => {
+const ChilderenCommentInput = ({
+  parentCommentId,
+  postId,
+  setInputModal,
+}: Props) => {
   const { onChange, onSubmit, content } = useChildCommentPost({
     postId,
     parentCommentId,
+    setInputModal,
   });
 
   const Profile =

@@ -9,9 +9,14 @@ import { getToken } from "../../util/localstorage";
 interface Props {
   postId: number;
   parentCommentId?: number;
+  setInputModal: any;
 }
 
-const useChildCommentPost = ({ postId, parentCommentId }: Props) => {
+const useChildCommentPost = ({
+  postId,
+  parentCommentId,
+  setInputModal,
+}: Props) => {
   const [content, setContent] = useState<string>("");
 
   const queryClient = useQueryClient();
@@ -43,6 +48,7 @@ const useChildCommentPost = ({ postId, parentCommentId }: Props) => {
         {
           onSuccess: () => {
             window.alert("대댓글 성공");
+            setInputModal(false);
             setContent("");
             queryClient.invalidateQueries(["comment/useGetComments", postId]);
           },
