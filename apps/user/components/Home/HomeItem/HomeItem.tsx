@@ -67,8 +67,8 @@ const HomeItem = ({ data, postId }: Props) => {
           {fileData && (
             <Image
               src={String(fileData)}
-              width={100}
-              height={100}
+              width={490}
+              height={490}
               alt="이미지 없음"
             />
           )}
