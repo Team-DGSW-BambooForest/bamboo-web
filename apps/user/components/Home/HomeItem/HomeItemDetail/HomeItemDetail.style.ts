@@ -8,6 +8,9 @@ export const MainDetailContainer = styled.div`
 
 export const DetailContainer = styled.div`
   padding-left: 310px;
+  @media screen and (max-width: 1600px) {
+    padding-left: 180px;
+  }
 
   padding-top: 35px;
   padding-bottom: 30px;
