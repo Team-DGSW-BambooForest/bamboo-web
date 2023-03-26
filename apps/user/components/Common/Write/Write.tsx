@@ -34,7 +34,7 @@ const Write = ({ close }: { close: () => void }) => {
     >
       <WriteTopWrap>
         <WriteTopText>익명 제보하기</WriteTopText>
-        <AiOutlineClose style={{ marginRight: "18px" }} />
+        <AiOutlineClose style={{ marginRight: "18px" }} onClick={close} />
       </WriteTopWrap>
       <WirteTopLine />
       <WriteUserInfoWrap>
