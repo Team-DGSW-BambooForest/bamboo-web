@@ -1,5 +1,4 @@
 import { customAxios } from "custom-util";
-import { data } from "cypress/types/jquery";
 import { FileResponse } from "../../types/File/File.type";
 import { fileParam } from "./file.param";
 
