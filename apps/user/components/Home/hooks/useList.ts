@@ -5,7 +5,7 @@ import { PostDataType, PostResponse } from "../../../types/Post/Post.type";
 
 const useList = () => {
   const { mutate } = useGetPostsQuery();
-  const [isLoaded, setIsLoaded] = useState(true);
+  const [isLoaded, setIsLoaded] = useState(false);
   const [target, setTarget] = useState<HTMLDivElement | null>(null);
   const [itemLists, setItemLists] = useState<PostDataType[]>([]);
   const [end, setEnd] = useState(false);
@@ -17,13 +17,8 @@ const useList = () => {
         setItemLists((prev) => [...prev, ...res.list]);
         pageRef.current++;
       },
-      onError: () => {
-        setEnd(true);
-      },
     });
-
-    setIsLoaded(false);
-  }, []);
+  }, [mutate]);
 
   const getMoreItem = async () => {
     setIsLoaded(true);
