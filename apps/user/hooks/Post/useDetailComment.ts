@@ -32,49 +32,25 @@ const useChildCommentPost = ({ postId, parentCommentId }: Props) => {
 
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (tokenState) {
-      if (parentCommentId) {
-        createCommentMutation.mutateAsync(
-          {
-            content,
-            postId,
-            parentCommentId,
+
+    if (parentCommentId) {
+      createCommentMutation.mutateAsync(
+        {
+          content,
+          postId,
+          parentCommentId,
+        },
+        {
+          onSuccess: () => {
+            window.alert("대댓글 성공");
+            setContent("");
+            queryClient.invalidateQueries(["comment/useGetComments", postId]);
           },
-          {
-            onSuccess: () => {
-              window.alert("대댓글 성공");
-              setContent("");
-              queryClient.invalidateQueries(["comment/useGetComments", postId]);
-            },
-            onError: () => {
-              window.alert("댓글 등록 실패");
-            },
-          }
-        );
-      } else {
-        if (parentCommentId) {
-          createCommentMutation.mutateAsync(
-            {
-              content,
-              postId,
-              parentCommentId,
-            },
-            {
-              onSuccess: () => {
-                window.alert("대댓글 성공");
-                setContent("");
-                queryClient.invalidateQueries([
-                  "comment/useGetComments",
-                  postId,
-                ]);
-              },
-              onError: () => {
-                window.alert("댓글 등록 실패");
-              },
-            }
-          );
+          onError: () => {
+            window.alert("댓글 등록 실패");
+          },
         }
-      }
+      );
     } else {
       createCommentMutation.mutateAsync(
         {

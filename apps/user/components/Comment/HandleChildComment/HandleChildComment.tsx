@@ -22,9 +22,6 @@ const HandleChildComment = ({ item, postId }: Props) => {
             <S.CommentText>{item.content}</S.CommentText>
           </S.CommentBox>
           <S.CommentBottomWrap>
-            <S.CommentAddText onClick={() => setInputModal((prev) => !prev)}>
-              답글 달기
-            </S.CommentAddText>
             <S.CommentUploadTime>{item.diffTime}</S.CommentUploadTime>
           </S.CommentBottomWrap>
         </S.CommentBoxWrap>

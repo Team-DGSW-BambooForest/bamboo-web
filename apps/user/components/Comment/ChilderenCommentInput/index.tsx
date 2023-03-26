@@ -18,6 +18,7 @@ const ChilderenCommentInput = ({ parentCommentId, postId }: Props) => {
 
   const Profile =
     "https://bamboodgsw.s3.ap-northeast-2.amazonaws.com/profile/anonymous_profile.png";
+
   return (
     <S.DetailCommentBox onClick={(e) => stopBubbling(e)}>
       <Avatar size="sm" src={Profile} alt="이미지 없음" />

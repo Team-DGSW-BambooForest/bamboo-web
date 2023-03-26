@@ -42,6 +42,7 @@ const HomeItem = ({ data, postId }: Props) => {
   const handleCommentData = ChildCommentData?.slice(0, 2);
   const router = useRouter();
   const date = dotDate(data.createdAt);
+  console.log(fileData);
 
   return (
     <>
