@@ -5,10 +5,25 @@ import { PostDataType, PostResponse } from "../../../types/Post/Post.type";
 
 const useList = () => {
   const { mutate } = useGetPostsQuery();
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(true);
   const [target, setTarget] = useState<HTMLDivElement | null>(null);
   const [itemLists, setItemLists] = useState<PostDataType[]>([]);
+  const [end, setEnd] = useState(false);
   const pageRef = useRef(1);
+
+  useEffect(() => {
+    mutate(pageRef.current, {
+      onSuccess: (res: PostResponse) => {
+        setItemLists((prev) => [...prev, ...res.list]);
+        pageRef.current++;
+      },
+      onError: () => {
+        setEnd(true);
+      },
+    });
+
+    setIsLoaded(false);
+  }, []);
 
   const getMoreItem = async () => {
     setIsLoaded(true);
@@ -18,6 +33,9 @@ const useList = () => {
       onSuccess: (res: PostResponse) => {
         setItemLists((prev) => [...prev, ...res.list]);
         pageRef.current++;
+      },
+      onError: () => {
+        setEnd(true);
       },
     });
     setIsLoaded(false);
@@ -45,7 +63,7 @@ const useList = () => {
     return () => observer && observer.disconnect();
   }, [target]);
 
-  return { itemLists, isLoaded, setTarget };
+  return { itemLists, isLoaded, setTarget, end };
 };
 
 export default useList;

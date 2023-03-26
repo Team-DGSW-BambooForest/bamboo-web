@@ -59,6 +59,8 @@ export const WritePostInput = styled.textarea`
 
   border: none;
   outline: none;
+
+  resize: none;
 `;
 
 export const WriteImageWrap = styled.div`

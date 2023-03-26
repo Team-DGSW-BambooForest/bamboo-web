@@ -35,17 +35,19 @@ const Loaders: any = ({ isLoaded }: LoaderProps) => {
 const Container = ({
   setTarget,
   children,
+  end,
 }: {
   setTarget: any;
   children: React.ReactNode;
+  end: boolean;
 }) => {
-  return <div ref={setTarget}>{children}</div>;
+  return <>{!end && <div ref={setTarget}>{children}</div>}</>;
 };
 
 Loaders.Container = Container;
 
 const Home = () => {
-  const { isLoaded, itemLists, setTarget } = useList();
+  const { isLoaded, itemLists, setTarget, end } = useList();
 
   return (
     <>
@@ -54,7 +56,7 @@ const Home = () => {
           {itemLists?.map((data) => (
             <HomeItem data={data} postId={data.postId} key={data.postId} />
           ))}
-          <Loaders.Container setTarget={setTarget}>
+          <Loaders.Container setTarget={setTarget} end={end}>
             <Loaders isLoaded={isLoaded} />
           </Loaders.Container>
         </HomeItemContainer>
