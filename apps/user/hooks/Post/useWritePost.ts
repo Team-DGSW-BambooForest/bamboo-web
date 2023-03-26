@@ -56,6 +56,9 @@ const useWritePost = (close: () => void) => {
             hashtags: [],
           });
           setPostId(res!!);
+          if (file.length !== 0) {
+            postFileMutation.mutate({ postId: res, file: file[0] });
+          }
           close();
         },
         onError: () => {

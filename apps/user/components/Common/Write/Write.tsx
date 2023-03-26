@@ -52,7 +52,12 @@ const Write = ({ close }: { close: () => void }) => {
         <WriteAddImageWrap>
           <MdOutlinePhotoCamera />
           <BiImageAlt onClick={inputClick} />
-          <DisableInput type="file" ref={fileRef} onChange={changeFile} />
+          <DisableInput
+            type="file"
+            ref={fileRef}
+            onChange={changeFile}
+            accept="image/png, image/jpeg, image/jpg, image/svg"
+          />
         </WriteAddImageWrap>
       </WriteImageWrap>
       <Button size="lg" color="primary" onClick={onSubmitPostData}>
