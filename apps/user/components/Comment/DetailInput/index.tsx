@@ -23,6 +23,7 @@ const Profile =
 const DetailInput = ({ postId }: Props) => {
   const { onChange, onSubmit, content } = useChildCommentPost({
     postId,
+    setInputModal: () => {},
   });
   return (
     <HomeItemCommentBox onClick={(e) => stopBubbling(e)}>
