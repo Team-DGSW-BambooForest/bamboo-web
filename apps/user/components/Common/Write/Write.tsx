@@ -57,7 +57,7 @@ const Write = ({ close }: { close: () => void }) => {
             type="file"
             ref={fileRef}
             onChange={changeFile}
-            accept="image/png, image/jpeg, image/jpg, image/svg"
+            accept="image/png, image/jpeg, image/jpg, image/svg, image/gif"
           />
         </WriteAddImageWrap>
       </WriteImageWrap>
