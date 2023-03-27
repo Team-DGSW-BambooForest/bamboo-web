@@ -34,6 +34,10 @@ const useCommentPost = ({ postId }: Props) => {
 
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    if (content === "") {
+      window.alert("댓글을 입력해주세요");
+      return;
+    }
 
     if (!tokenState) {
       createCommentMutation.mutateAsync(
