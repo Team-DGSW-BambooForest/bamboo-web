@@ -15,9 +15,7 @@ const useLogin = () => {
       });
       setToken(token, refreshToken);
       router.push("/");
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   }, []);
 
   useEffect(() => {

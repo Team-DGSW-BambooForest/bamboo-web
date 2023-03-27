@@ -13,7 +13,6 @@ interface Props {
 
 const AllComments = ({ data, postId }: Props) => {
   const [inputModal, setInputModal] = useState(false);
-  console.log(data);
 
   return (
     <S.CommentContainer>

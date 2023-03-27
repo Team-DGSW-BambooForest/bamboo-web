@@ -22,8 +22,6 @@ const useWritePost = (close: () => void) => {
   const [postId, setPostId] = useState<number>(-1);
   const fileRef = useRef<HTMLInputElement>(null);
 
-  console.log(file);
-
   const onChangePostDataText = (
     e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
   ) => {
