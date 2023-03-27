@@ -43,7 +43,7 @@ export const HomeItemHr = styled.hr`
     width: 500px;
   }
   width: 532px;
-  color: #f2f2f2;
+  border: 1px solid #e2e2e2;
 
   border-bottom: none;
 `;
