@@ -41,6 +41,7 @@ const useChildCommentPost = ({
       window.alert("댓글 입력 부탁드립니다 ㅠㅠㅠ");
       return;
     }
+
     if (parentCommentId) {
       createCommentMutation.mutateAsync(
         {

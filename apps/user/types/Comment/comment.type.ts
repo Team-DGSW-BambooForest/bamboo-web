@@ -3,7 +3,7 @@ export interface CommentType {
   profileImage: string;
   writer: string;
   content: string;
-  diffTime: string;
+  createdAt: string;
 }
 
 export interface GetComments {
