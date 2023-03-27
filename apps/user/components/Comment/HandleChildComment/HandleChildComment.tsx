@@ -22,7 +22,7 @@ const HandleChildComment = ({ item, postId }: Props) => {
             <S.CommentText>{item.content}</S.CommentText>
           </S.CommentBox>
           <S.CommentBottomWrap>
-            <S.CommentUploadTime>{item.diffTime}</S.CommentUploadTime>
+            <S.CommentUploadTime>{item.createdAt}</S.CommentUploadTime>
           </S.CommentBottomWrap>
         </S.CommentBoxWrap>
       </S.CommentWrap>
