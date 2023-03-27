@@ -5,7 +5,6 @@ import {
   HomeItemContent,
   HomeItemDate,
   HomeItemHr,
-  HomeItemImage,
   HomeItemInfo,
   HomeItemProfileContainer,
   HomeItemTopWrap,
