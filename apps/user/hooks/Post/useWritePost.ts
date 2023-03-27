@@ -14,10 +14,15 @@ const useWritePost = (close: () => void) => {
     content: "",
     hashtags: [],
   });
+
   const writePostMutation = useWrtiePostQuery();
   const signedWritePostMutation = useSignedWrtiePostQuery();
-
   const postFileMutation = usePostFileQuery();
+  const [file, setFile] = useState<FileList>();
+  const [postId, setPostId] = useState<number>(-1);
+  const fileRef = useRef<HTMLInputElement>(null);
+
+  console.log(file);
 
   const onChangePostDataText = (
     e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
@@ -26,10 +31,6 @@ const useWritePost = (close: () => void) => {
     setPostData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const [file, setFile] = useState<FileList>();
-  const [postId, setPostId] = useState<number>(-1);
-
-  const fileRef = useRef<HTMLInputElement>(null);
   const inputClick = () => {
     fileRef.current?.click();
   };
@@ -51,10 +52,12 @@ const useWritePost = (close: () => void) => {
       {
         onSuccess: (res: any) => {
           window.alert("게시물 요청 성공");
+
           setPostData({
             content: "",
             hashtags: [],
           });
+
           setPostId(res!!);
           if (file && file?.length !== 0) {
             postFileMutation.mutate({ postId: res, file: file[0] });
