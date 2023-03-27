@@ -53,7 +53,6 @@ customAxios.interceptors.response.use(
             error.response.data.status === 401 ||
             error.response.data.status === 404
           ) {
-            console.log("login failure");
             router.push("/login");
             clearToken();
           }
