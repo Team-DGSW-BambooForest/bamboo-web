@@ -10,9 +10,10 @@ import {
 import AdminImage from "../../../asset/Anonymous.svg";
 
 import Image from "next/image";
-import { useGetHoldPost } from "../../../queries/post/post.query";
+import { useGetHoldPost } from "../../../queries/Post/post.query";
 import { dotDate } from "../../../util/day";
-import useAllowedPost from "../../../hooks/post/useAllowedPost";
+import useAllowedPost from "../../../hooks/Post/useAllowedPost";
+import { useGetFileQuery } from "../../../queries/File/file.query";
 
 interface Props {
   data: {
@@ -27,6 +28,8 @@ interface Props {
 const HomeHoldItem = ({ data }: Props) => {
   const date = dotDate(data.createdAt);
   const { submitAllowedPost } = useAllowedPost({ postId: data.postId });
+  const { data: fileData } = useGetFileQuery({ postId: data.postId });
+
   return (
     <>
       <Card
@@ -71,6 +74,14 @@ const HomeHoldItem = ({ data }: Props) => {
           </ButtonWrapper>
         </HoldItemTopWrap>
         <HoldItemContent>{data.content}</HoldItemContent>
+        {fileData && (
+          <Image
+            src={String(fileData)}
+            width={490}
+            height={490}
+            alt="이미지 없음"
+          />
+        )}
       </Card>
     </>
   );
