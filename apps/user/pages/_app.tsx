@@ -11,6 +11,8 @@ import Header from "../components/Common/Header/Header";
 import ProfileBar from "../components/Common/Profile/ProfileBar";
 import ScrollButton from "../components/Common/Button/ScrollButton";
 import GlobalStyles from "../styles/GlobalStyle1";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
   Component,
@@ -26,6 +28,16 @@ const MyApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
     <>
       <GlobalStyles />
       <BambooThemeProvider mode="light">
+        <ToastContainer
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
         <RecoilRoot>
           <QueryClientProvider client={queryClientRef.current}>
             <Hydrate state={pageProps.dehydratedState}>

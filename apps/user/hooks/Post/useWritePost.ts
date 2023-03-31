@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { ChangeEvent } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import { toast } from "react-toastify";
 import { usePostFileQuery } from "../../queries/File/file.query";
 import {
   useSignedWrtiePostQuery,
@@ -49,8 +50,7 @@ const useWritePost = (close: () => void) => {
       { content, hashtags },
       {
         onSuccess: (res: any) => {
-          window.alert("게시물 요청 성공");
-
+          toast.success("게시물 요청 성공");
           setPostData({
             content: "",
             hashtags: [],
@@ -63,7 +63,7 @@ const useWritePost = (close: () => void) => {
           close();
         },
         onError: () => {
-          window.alert("게시물 요청 실패");
+          toast.error("게시물 요청 실패");
         },
       }
     );
@@ -72,7 +72,7 @@ const useWritePost = (close: () => void) => {
     const { content, hashtags } = postData;
 
     if (content === "") {
-      window.alert("내용을 입력해주세요");
+      toast.info("내용을 입력해주세요");
       return;
     }
 
@@ -80,7 +80,7 @@ const useWritePost = (close: () => void) => {
       { content, hashtags },
       {
         onSuccess: (res: any) => {
-          window.alert("게시물 요청 성공");
+          toast.success("게시물 요청 성공");
           setPostData({
             content: "",
             hashtags: [],
@@ -89,7 +89,7 @@ const useWritePost = (close: () => void) => {
           close();
         },
         onError: () => {
-          window.alert("게시물 요청 실패");
+          toast.error("게시물 요청 실패");
         },
       }
     );

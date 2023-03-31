@@ -3,6 +3,7 @@ import { FormEvent } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useQueryClient } from "react-query";
+import { toast } from "react-toastify";
 import {
   useCreateCommentQuery,
   useSignedCreateCommentQuery,
@@ -35,7 +36,7 @@ const useCommentPost = ({ postId }: Props) => {
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (content === "") {
-      window.alert("댓글을 입력해주세요");
+      toast.info("댓글을 입력해주세요 ");
       return;
     }
 
@@ -48,7 +49,7 @@ const useCommentPost = ({ postId }: Props) => {
         },
         {
           onSuccess: () => {
-            window.alert("익명 그냥 댓글 성공");
+            toast.success("익명 그냥 댓글 성공");
             setContent("");
             queryClient.invalidateQueries([
               "comment/useGetCommentById",
@@ -56,7 +57,7 @@ const useCommentPost = ({ postId }: Props) => {
             ]);
           },
           onError: () => {
-            window.alert("댓글 등록 실패");
+            toast.error("댓글 등록 실패");
           },
         }
       );
@@ -69,7 +70,7 @@ const useCommentPost = ({ postId }: Props) => {
         },
         {
           onSuccess: () => {
-            window.alert("기명 그냥 댓글 성공");
+            toast.success("기명 그냥 댓글 성공");
             setContent("");
             queryClient.invalidateQueries([
               "comment/useGetCommentById",
@@ -77,7 +78,7 @@ const useCommentPost = ({ postId }: Props) => {
             ]);
           },
           onError: () => {
-            window.alert("댓글 등록 실패");
+            toast.error("댓글 등록 실패");
           },
         }
       );

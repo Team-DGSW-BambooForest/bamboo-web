@@ -3,6 +3,7 @@ import { FormEvent } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useQueryClient } from "react-query";
+import { toast } from "react-toastify";
 import { useCreateCommentQuery } from "../../queries/Comment/Comment.query";
 import { getToken } from "../../util/localstorage";
 
@@ -38,7 +39,7 @@ const useChildCommentPost = ({
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (content === "") {
-      window.alert("댓글 입력 부탁드립니다 ㅠㅠㅠ");
+      toast.info("댓글 입력 부탁드립니다 ㅠㅠㅠ");
       return;
     }
 
@@ -51,13 +52,13 @@ const useChildCommentPost = ({
         },
         {
           onSuccess: () => {
-            window.alert("대댓글 성공");
+            toast.success("대댓글 성공");
             setInputModal(false);
             setContent("");
             queryClient.invalidateQueries(["comment/useGetComments", postId]);
           },
           onError: () => {
-            window.alert("댓글 등록 실패");
+            toast.error("댓글 등록 실패");
           },
         }
       );
@@ -70,12 +71,12 @@ const useChildCommentPost = ({
         },
         {
           onSuccess: () => {
-            window.alert("디테일 댓글 성공");
+            toast.success("디테일 댓글 성공");
             setContent("");
             queryClient.invalidateQueries(["comment/useGetComments", postId]);
           },
           onError: () => {
-            window.alert("댓글 등록 실패");
+            toast.error("댓글 등록 실패");
           },
         }
       );
