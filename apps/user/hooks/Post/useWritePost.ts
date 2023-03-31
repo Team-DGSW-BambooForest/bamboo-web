@@ -42,7 +42,7 @@ const useWritePost = (close: () => void) => {
     const { content, hashtags } = postData;
 
     if (content == "") {
-      window.alert("내용을 입력해주세요");
+      toast.info("내용을 입력해주세요");
       return;
     }
 
