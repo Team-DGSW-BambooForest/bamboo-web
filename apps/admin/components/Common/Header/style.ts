@@ -20,6 +20,30 @@ export const AdminHeaderLeftSection = styled.div`
   display: flex;
 `;
 
+export const AdminHeaderMidSection = styled.div`
+  width: 532px;
+  height: 100%;
+
+  display: flex;
+`;
+
+export const AdminHeaderMidLeftSection = styled.div`
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const AdminHeaderMidRightSection = styled.div`
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const AdminHeaderSearchContainer = styled.div`
   display: flex;
   align-items: center;

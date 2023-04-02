@@ -1,6 +1,6 @@
 import { customAxios } from "custom-util";
-import { AllowedResponse, PostResponse } from "../../types/post/post.type";
-import { getStatusPostByIdParam } from "./post.param";
+import { AllowedResponse, PostResponse } from "../../types/Post/post.type";
+import { DeletePostByIdParam, getStatusPostByIdParam } from "./post.param";
 
 class PostRepositroy {
   public async getStatusPostById({
@@ -12,6 +12,16 @@ class PostRepositroy {
 
   public async getHoldPost(): Promise<PostResponse> {
     const { data } = await customAxios.get("/post/list/hold");
+    return data;
+  }
+
+  public async getPosts(page: number): Promise<PostResponse> {
+    const { data } = await customAxios.get(`/post/list?page=${page}`);
+    return data;
+  }
+
+  public async deletePost({ postId }: DeletePostByIdParam): Promise<void> {
+    const { data } = await customAxios.delete(`/admin/delete/${postId}`);
     return data;
   }
 }

@@ -6,3 +6,7 @@ export interface getStatusPostByIdParam {
 export interface AllowedHoldPost {
   status: string;
 }
+
+export interface DeletePostByIdParam {
+  postId: number;
+}

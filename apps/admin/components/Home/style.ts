@@ -16,3 +16,9 @@ export const AdminHoldItemContainer = styled.div`
 
   z-index: -100;
 `;
+
+export const AdminHomeMainContainer = styled.div`
+  width: 100%;
+  min-height: 100vh;
+  background: #fbfcff;
+`;

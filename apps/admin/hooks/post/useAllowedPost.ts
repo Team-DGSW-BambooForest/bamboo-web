@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ChangeEvent } from "react";
 import { useQueryClient } from "react-query";
-import { useAllowedHoldPost } from "../../queries/post/post.query";
+import { useAllowedHoldPost } from "../../queries/Post/post.query";
 
 interface Props {
   postId: number;
