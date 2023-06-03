@@ -3,6 +3,7 @@ import { SizeType } from "../../interface/size.type";
 
 export const CardContainer = styled.div<{
   size: SizeType;
+  hover: string;
 }>`
   @media screen and (max-width: 1600px) {
     padding-top: 12px;
@@ -13,6 +14,10 @@ export const CardContainer = styled.div<{
   background: #ffffff;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
   ${({ size }) => sizeStyle[size]}
+
+  &:hover {
+    background: ${({ hover }) => hover};
+  }
 `;
 
 const sizeStyle: Record<SizeType, FlattenSimpleInterpolation> = {

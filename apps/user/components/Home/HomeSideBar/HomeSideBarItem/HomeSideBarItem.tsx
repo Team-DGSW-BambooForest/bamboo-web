@@ -27,6 +27,7 @@ const HomeSideBarItem = () => {
   return (
     <>
       <Card
+        hover={true}
         size="sm"
         style={{ display: "flex", cursor: "pointer" }}
         onClick={modal1.open}
@@ -47,7 +48,11 @@ const HomeSideBarItem = () => {
         </Modal>
       </Card>
 
-      <Card size="sm" style={{ display: "flex", cursor: "pointer" }}>
+      <Card
+        hover={true}
+        size="sm"
+        style={{ display: "flex", cursor: "pointer" }}
+      >
         <Image src={img} height={42} width={42} alt="이미지 없음" />
         <CardInfoBox onClick={modal2.open}>
           <CardTitle>기명 제보하기</CardTitle>
