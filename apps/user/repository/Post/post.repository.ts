@@ -1,7 +1,7 @@
 import axios from "axios";
 import { PostDataType, PostResponse } from "../../types/Post/Post.type";
 import { customAxios } from "../../util/axios";
-import { conf } from "../../util/config";
+import config from "../../config/config.json";
 import { KeywordParam, PostIdParam, WritePostParam } from "./post.param";
 
 class PostRepository {
@@ -9,7 +9,7 @@ class PostRepository {
     content,
     hashtags,
   }: WritePostParam): Promise<void> {
-    const { data } = await axios.post(`${conf.baseUrl}/post/create`, {
+    const { data } = await axios.post(`${config.SERVER}/post/create`, {
       content,
       hashtags,
     });

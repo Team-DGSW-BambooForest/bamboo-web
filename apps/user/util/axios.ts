@@ -1,14 +1,10 @@
-import axios, {
-  AxiosRequestConfig,
-  AxiosError,
-  InternalAxiosRequestConfig,
-} from "axios";
-import { conf } from "./config";
+import axios, { AxiosError } from "axios";
+import CONFIG from "../config/config.json";
 import { clearToken, getToken, setToken } from "./localstorage";
 import router from "next/router";
 
 export const customAxios = axios.create({
-  baseURL: conf.baseUrl,
+  baseURL: CONFIG.SERVER,
   timeout: 10000,
 });
 
@@ -37,7 +33,7 @@ customAxios.interceptors.response.use(
             data: { accessToken, refreshToken },
           } = await axios({
             method: "POST",
-            url: `${conf.baseUrl}/user/token-reniew`,
+            url: `${CONFIG.SERVER}/user/token-reniew`,
             headers: {
               "refresh-token": `Bearer ${getToken().refreshToken}`,
             },
