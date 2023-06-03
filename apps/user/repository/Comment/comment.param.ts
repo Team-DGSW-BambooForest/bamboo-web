@@ -1,13 +1,13 @@
-export interface createCommentParam {
+export interface CreateCommentParam {
   postId: number;
   parentCommentId: number;
   content: string;
 }
 
-export interface getCommentByIdParam {
+export interface GetCommentByIdParam {
   postId: number;
 }
 
-export interface getNestedCommentParam {
+export interface GetNestedCommentParam {
   commentId: number;
 }

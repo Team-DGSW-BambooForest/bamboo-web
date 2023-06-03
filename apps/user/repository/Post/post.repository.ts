@@ -2,13 +2,13 @@ import axios from "axios";
 import { PostDataType, PostResponse } from "../../types/Post/Post.type";
 import { customAxios } from "../../util/axios";
 import { conf } from "../../util/config";
-import { KeywordParam, postIdParam, writePostParam } from "./post.param";
+import { KeywordParam, PostIdParam, WritePostParam } from "./post.param";
 
 class PostRepository {
   public async createPost({
     content,
     hashtags,
-  }: writePostParam): Promise<void> {
+  }: WritePostParam): Promise<void> {
     const { data } = await axios.post(`${conf.baseUrl}/post/create`, {
       content,
       hashtags,
@@ -19,7 +19,7 @@ class PostRepository {
   public async signedCreatePost({
     content,
     hashtags,
-  }: writePostParam): Promise<void> {
+  }: WritePostParam): Promise<void> {
     const { data } = await customAxios.post("/post/create", {
       content,
       hashtags,
@@ -32,7 +32,7 @@ class PostRepository {
     return data;
   }
 
-  public async getPostById({ id }: postIdParam): Promise<PostDataType> {
+  public async getPostById({ id }: PostIdParam): Promise<PostDataType> {
     const { data } = await customAxios.get(`/post/${id}`);
     return data;
   }

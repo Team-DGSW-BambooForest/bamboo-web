@@ -8,10 +8,10 @@ import {
   useSignedWrtiePostQuery,
   useWrtiePostQuery,
 } from "../../queries/Post/post.query";
-import { writePostParam } from "../../repository/Post/post.param";
+import { WritePostParam } from "../../repository/Post/post.param";
 
 const useWritePost = (close: () => void) => {
-  const [postData, setPostData] = useState<writePostParam>({
+  const [postData, setPostData] = useState<WritePostParam>({
     content: "",
     hashtags: [],
   });

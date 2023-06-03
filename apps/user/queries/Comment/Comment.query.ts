@@ -1,12 +1,12 @@
 import { useMutation, useQuery } from "react-query";
 import {
-  createCommentParam,
-  getCommentByIdParam,
-  getNestedCommentParam,
+  CreateCommentParam,
+  GetCommentByIdParam,
+  GetNestedCommentParam,
 } from "../../repository/Comment/comment.param";
 import commentRepository from "../../repository/Comment/comment.repository";
 
-export const useGetCommentByIdQuery = ({ postId }: getCommentByIdParam) =>
+export const useGetCommentByIdQuery = ({ postId }: GetCommentByIdParam) =>
   useQuery(
     ["comment/useGetCommentById", postId],
     () => commentRepository.getCommentById({ postId }),
@@ -18,7 +18,7 @@ export const useGetCommentByIdQuery = ({ postId }: getCommentByIdParam) =>
 
 export const useGetNestedCommentQuery = ({
   commentId,
-}: getNestedCommentParam) =>
+}: GetNestedCommentParam) =>
   useQuery(
     ["comment/useGetNestedComment", commentId],
     () => commentRepository.getNestedComment({ commentId }),
@@ -30,7 +30,7 @@ export const useGetNestedCommentQuery = ({
 
 export const useCreateCommentQuery = () => {
   const mutation = useMutation(
-    ({ postId, parentCommentId, content }: createCommentParam) =>
+    ({ postId, parentCommentId, content }: CreateCommentParam) =>
       commentRepository.createComment({ postId, parentCommentId, content })
   );
   return mutation;
@@ -38,7 +38,7 @@ export const useCreateCommentQuery = () => {
 
 export const useSignedCreateCommentQuery = () => {
   const mutation = useMutation(
-    ({ postId, parentCommentId, content }: createCommentParam) =>
+    ({ postId, parentCommentId, content }: CreateCommentParam) =>
       commentRepository.signedCreateComment({
         postId,
         parentCommentId,
@@ -48,7 +48,7 @@ export const useSignedCreateCommentQuery = () => {
   return mutation;
 };
 
-export const useGetCommentsQuery = ({ postId }: getCommentByIdParam) =>
+export const useGetCommentsQuery = ({ postId }: GetCommentByIdParam) =>
   useQuery(
     ["comment/useGetComments", postId],
     () => commentRepository.getComments({ postId }),

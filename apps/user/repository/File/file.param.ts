@@ -1,8 +1,8 @@
-export interface fileParam {
+export interface FileParam {
   postId: number;
   file?: File;
 }
 
-export interface getFileParam {
+export interface GetFileParam {
   postId: number;
 }

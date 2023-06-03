@@ -3,9 +3,9 @@ import { customAxios } from "custom-util";
 import { CommentType, GetComments } from "../../types/Comment/comment.type";
 import { conf } from "../../util/config";
 import {
-  createCommentParam,
-  getCommentByIdParam,
-  getNestedCommentParam,
+  CreateCommentParam,
+  GetCommentByIdParam,
+  GetNestedCommentParam,
 } from "./comment.param";
 
 class CommentRepository {
@@ -13,7 +13,7 @@ class CommentRepository {
     postId,
     parentCommentId,
     content,
-  }: createCommentParam): Promise<void> {
+  }: CreateCommentParam): Promise<void> {
     await customAxios.post("/comment/create", {
       postId,
       parentCommentId,
@@ -25,7 +25,7 @@ class CommentRepository {
     postId,
     parentCommentId,
     content,
-  }: createCommentParam): Promise<void> {
+  }: CreateCommentParam): Promise<void> {
     await axios.post(`${conf.baseUrl}/comment/create`, {
       postId,
       parentCommentId,
@@ -34,28 +34,28 @@ class CommentRepository {
   }
   public async getCommentById({
     postId,
-  }: getCommentByIdParam): Promise<CommentType[]> {
+  }: GetCommentByIdParam): Promise<CommentType[]> {
     const { data } = await customAxios.get(`/comment/${postId}`);
     return data;
   }
 
   public async getNestedComment({
     commentId,
-  }: getNestedCommentParam): Promise<CommentType[]> {
+  }: GetNestedCommentParam): Promise<CommentType[]> {
     const { data } = await customAxios.get(`/comment/nested/${commentId}`);
     return data;
   }
 
   public async getComments({
     postId,
-  }: getCommentByIdParam): Promise<GetComments[]> {
+  }: GetCommentByIdParam): Promise<GetComments[]> {
     const { data } = await customAxios.get(`/comment/comments/${postId}`);
     return data;
   }
 
   public async getCommentCount({
     postId,
-  }: getCommentByIdParam): Promise<number> {
+  }: GetCommentByIdParam): Promise<number> {
     const { data } = await customAxios.get(`/comment/count/${postId}`);
     return data;
   }

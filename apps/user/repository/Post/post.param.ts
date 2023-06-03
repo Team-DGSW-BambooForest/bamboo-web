@@ -1,9 +1,9 @@
-export interface writePostParam {
+export interface WritePostParam {
   content: string;
   hashtags: string[];
 }
 
-export interface postIdParam {
+export interface PostIdParam {
   id: number;
 }
 
