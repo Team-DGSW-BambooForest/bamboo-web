@@ -1,11 +1,5 @@
-import styled, {
-  css,
-  FlattenInterpolation,
-  FlattenSimpleInterpolation,
-  ThemeProps,
-} from "styled-components";
+import styled, { css, FlattenSimpleInterpolation } from "styled-components";
 import { ColorType } from "./button.interface";
-import { ColorThemeType } from "@bamboo/ui-mode";
 import { SizeType } from "../../interface/size.type";
 
 export const ButtonBox = styled.div<{
@@ -41,20 +35,15 @@ const sizeStyle: Record<Exclude<SizeType, "md">, FlattenSimpleInterpolation> = {
   `,
 };
 
-const colorStyle: Record<
-  ColorType,
-  FlattenInterpolation<ThemeProps<ColorThemeType>>
-> = {
+const colorStyle = {
   primary: css`
-    background: ${(props: ThemeProps<ColorThemeType>) =>
-      props.theme.colors?.primaryColor};
-    color: ${(props: ThemeProps<ColorThemeType>) => props.theme.colors?.white};
+    background: linear-gradient(99.09deg, #49e7ba 0%, #37dc81 100%);
+    color: #fff;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
   `,
   cancel: css`
-    background: ${(props: ThemeProps<ColorThemeType>) =>
-      props.theme.colors?.white};
-    color: ${(props: ThemeProps<ColorThemeType>) => props.theme.colors?.aqua};
+    color: #49e7ba;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
   `,
 };
 
