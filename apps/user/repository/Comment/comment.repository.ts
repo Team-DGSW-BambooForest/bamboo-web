@@ -1,5 +1,4 @@
 import axios from "axios";
-import { customAxios } from "custom-util";
 import { CommentType, GetComments } from "../../types/Comment/comment.type";
 import config from "../../config/config.json";
 import {
@@ -7,6 +6,7 @@ import {
   GetCommentByIdParam,
   GetNestedCommentParam,
 } from "./comment.param";
+import { customAxios } from "../../util/axios";
 
 class CommentRepository {
   public async signedCreateComment({

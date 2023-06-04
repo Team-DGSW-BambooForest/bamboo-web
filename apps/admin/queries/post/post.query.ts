@@ -1,6 +1,5 @@
 import { useMutation, useQuery } from "react-query";
 import {
-  AllowedHoldPost,
   DeletePostByIdParam,
   getStatusPostByIdParam,
 } from "../../repository/post/post.param";

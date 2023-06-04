@@ -70,11 +70,7 @@ const Home = () => {
         <AdminHoldItemContainer>
           <AdminHomeMainContainer>
             {itemLists?.map((data) => (
-              <HomeItem
-                data={data}
-                postId={String(data.postId)}
-                key={data.postId}
-              />
+              <HomeItem data={data} postId={data.postId} key={data.postId} />
             ))}
             <Loaders.Container setTarget={setTarget} end={end}>
               <Loaders isLoaded={isLoaded} />

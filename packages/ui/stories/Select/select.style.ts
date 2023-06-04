@@ -1,5 +1,4 @@
-import { ColorThemeType } from "@bamboo/ui-mode";
-import styled, { ThemeProps } from "styled-components";
+import styled from "styled-components";
 
 export const SelectContainer = styled.div`
   width: 100%;
@@ -36,8 +35,7 @@ export const SelectItemContainer = styled.div`
       line-height: 17px;
       letter-spacing: -0.0048em;
 
-      color: ${(props: ThemeProps<ColorThemeType>) =>
-        props.theme.colors?.blackFont};
+      color: #2f2f2f;
     }
   }
 
@@ -52,8 +50,7 @@ export const SelectItemContainer = styled.div`
     display: inline-block;
     visibility: visible;
     border: 2px solid #d1d3d1;
-    background: ${(props: ThemeProps<ColorThemeType>) =>
-      props.theme.colors?.white};
+    background: #fff;
     padding: 2px;
   }
 
@@ -64,8 +61,7 @@ export const SelectItemContainer = styled.div`
     top: -2px;
     left: -1px;
     position: relative;
-    background: ${(props: ThemeProps<ColorThemeType>) =>
-      props.theme.colors?.primaryColor};
+    background: linear-gradient(99.09deg, #49e7ba 0%, #37dc81 100%);
     content: "";
     display: inline-block;
     visibility: visible;
