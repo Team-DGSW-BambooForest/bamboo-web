@@ -1,4 +1,4 @@
-import { customAxios } from "custom-util";
+import { customAxios } from "../../lib/Axios/customAxios";
 import { fileParam } from "./file.param";
 
 class FileRepository {

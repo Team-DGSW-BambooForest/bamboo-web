@@ -9,8 +9,13 @@ export const HomeItemTopWrap = styled.div`
 
 export const HomeItemProfileContainer = styled.div`
   display: flex;
+  justify-content: space-between;
 
   width: 100%;
+`;
+
+export const HomeItemFlex = styled.div`
+  display: flex;
 `;
 
 export const HomeItemInfo = styled.div`
