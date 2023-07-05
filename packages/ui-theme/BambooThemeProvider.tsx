@@ -1,6 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { dark, light } from "@bamboo/ui-mode/BambooTheme";
+import { dark, light } from "./BambooTheme";
 
 type BambooThemeProviderType = {
   children: React.ReactNode;
