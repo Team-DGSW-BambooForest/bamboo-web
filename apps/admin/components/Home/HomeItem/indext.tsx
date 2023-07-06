@@ -13,12 +13,14 @@ import {
   HomeItemBottomWrap,
   HomeItemContent,
   HomeItemDate,
+  HomeItemFlex,
   HomeItemHr,
   HomeItemInfo,
   HomeItemProfileContainer,
   HomeItemTopWrap,
   HomeItemUserName,
 } from "./style";
+import CancelImg from "../../../../../packages/ui/stories/assets/cancel";
 
 interface Props {
   data: PostDataType;
@@ -32,7 +34,6 @@ const HomeItem = ({ data, postId }: Props) => {
   const router = useRouter();
   const date = dotDate(data.createdAt);
   const { onDeletePost } = useDeletePost({ postId });
-  console.log(postId);
 
   return (
     <>
@@ -48,12 +49,14 @@ const HomeItem = ({ data, postId }: Props) => {
       >
         <HomeItemTopWrap>
           <HomeItemProfileContainer>
-            <Avatar src={data.profileImage} size="md" alt="이미지 없음" />
-            <HomeItemInfo>
-              <HomeItemUserName>{data.author}</HomeItemUserName>
-              <HomeItemDate>{date}</HomeItemDate>
-            </HomeItemInfo>
-            <div onClick={onDeletePost}>x</div>
+            <HomeItemFlex>
+              <Avatar src={data.profileImage} size="md" alt="이미지 없음" />
+              <HomeItemInfo>
+                <HomeItemUserName>{data.author}</HomeItemUserName>
+                <HomeItemDate>{date}</HomeItemDate>
+              </HomeItemInfo>
+            </HomeItemFlex>
+            <CancelImg onClick={onDeletePost} />
           </HomeItemProfileContainer>
           <HomeItemContent>{data.content}</HomeItemContent>
           {fileData && (

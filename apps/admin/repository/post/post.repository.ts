@@ -1,4 +1,4 @@
-import { customAxios } from "custom-util";
+import { customAxios } from "../../lib/Axios/customAxios";
 import { AllowedResponse, PostResponse } from "../../types/Post/post.type";
 import { DeletePostByIdParam, getStatusPostByIdParam } from "./post.param";
 

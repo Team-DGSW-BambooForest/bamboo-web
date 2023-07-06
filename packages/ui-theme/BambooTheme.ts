@@ -1,4 +1,6 @@
-export const light = {
+import { ColorThemeType } from "styled-components";
+
+export const light: ColorThemeType = {
   white: "#fff",
   black: "#2F2F2F",
   darkGray: "#4B4B4B",
@@ -10,7 +12,7 @@ export const light = {
   blackFont: "#2f2f2f",
 };
 
-export const dark = {
+export const dark: ColorThemeType = {
   white: "#fff",
   black: "#2F2F2F",
   darkGray: "#4B4B4B",

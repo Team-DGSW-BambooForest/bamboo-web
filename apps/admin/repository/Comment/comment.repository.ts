@@ -1,12 +1,12 @@
 import axios from "axios";
-import { customAxios } from "custom-util";
-import { conf } from "custom-util/config";
 import { CommentType, GetComments } from "../../types/Comment/comment.type";
 import {
   createCommentParam,
   getCommentByIdParam,
   getNestedCommentParam,
 } from "./comment.param";
+import { customAxios } from "../../lib/Axios/customAxios";
+import config from "../../config/config.json";
 
 class CommentRepository {
   public async signedCreateComment({
@@ -26,7 +26,7 @@ class CommentRepository {
     parentCommentId,
     content,
   }: createCommentParam): Promise<void> {
-    await axios.post(`${conf.baseUrl}/comment/create`, {
+    await axios.post(`${config.SERVER}/comment/create`, {
       postId,
       parentCommentId,
       content,

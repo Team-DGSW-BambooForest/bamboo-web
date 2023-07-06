@@ -7,10 +7,7 @@ import {
   HoldItemUserBox,
   HoldItemUsername,
 } from "./style";
-import AdminImage from "../../../asset/Anonymous.svg";
-
 import Image from "next/image";
-import { useGetHoldPost } from "../../../queries/Post/post.query";
 import { dotDate } from "../../../util/day";
 import useAllowedPost from "../../../hooks/Post/useAllowedPost";
 import { useGetFileQuery } from "../../../queries/File/file.query";
@@ -67,7 +64,6 @@ const HomeHoldItem = ({ data }: Props) => {
               onClick={() => submitAllowedPost("ALLOWED")}
               color="primary"
               size="sm"
-              style={{ color: "black" }}
             >
               수락
             </Button>

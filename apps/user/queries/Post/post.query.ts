@@ -2,8 +2,8 @@ import { useMutation, useQuery, UseQueryOptions } from "react-query";
 import postRepository from "../../repository/Post/post.repository";
 import {
   KeywordParam,
-  postIdParam,
-  writePostParam,
+  PostIdParam,
+  WritePostParam,
 } from "../../repository/Post/post.param";
 
 export const useGetPostsQuery = () =>
@@ -12,20 +12,20 @@ export const useGetPostsQuery = () =>
   );
 
 export const useWrtiePostQuery = () => {
-  const mutation = useMutation(({ content, hashtags }: writePostParam) =>
+  const mutation = useMutation(({ content, hashtags }: WritePostParam) =>
     postRepository.createPost({ content, hashtags })
   );
   return mutation;
 };
 
 export const useSignedWrtiePostQuery = () => {
-  const mutation = useMutation(({ content, hashtags }: writePostParam) =>
+  const mutation = useMutation(({ content, hashtags }: WritePostParam) =>
     postRepository.signedCreatePost({ content, hashtags })
   );
   return mutation;
 };
 
-export const useGetPostById = ({ id }: postIdParam) =>
+export const useGetPostById = ({ id }: PostIdParam) =>
   useQuery(
     ["post/useGetPostById", id],
     () => postRepository.getPostById({ id }),
