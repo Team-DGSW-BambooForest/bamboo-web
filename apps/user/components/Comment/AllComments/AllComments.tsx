@@ -25,7 +25,7 @@ const AllComments = ({ data, postId }: Props) => {
           </S.CommentBox>
           <S.CommentBottomWrap>
             <S.CommentAddText onClick={() => setInputModal((prev) => !prev)}>
-              답글 달기
+              댓글 달기
             </S.CommentAddText>
             <S.CommentUploadTime>{data.comment.createdAt}</S.CommentUploadTime>
           </S.CommentBottomWrap>
